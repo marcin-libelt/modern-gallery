@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  body {
+    @apply text-white border-white;
+  }
+
+  body {
+    @apply bg-background;
+  }
+
+  a {
+    @apply text-secondary underline hover:no-underline;
+  }
+}
