@@ -1,4 +1,4 @@
-import Gallery from "./ui/Gallery2";
+import Gallery from "./ui/Gallery";
 
 export default function Page({
   searchParams,
