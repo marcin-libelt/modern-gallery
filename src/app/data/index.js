@@ -2628,7 +2628,6 @@ export const unsplash_photos = [
       },
     },
   },
-  ,
   {
     id: "xWvMVb4YoPo",
     slug: "xWvMVb4YoPo",
@@ -5207,7 +5206,6 @@ export const unsplash_photos = [
       },
     },
   },
-  ,
   {
     id: "jxPpOnGMYYw",
     slug: "jxPpOnGMYYw",
@@ -7859,7 +7857,6 @@ export const unsplash_photos = [
       },
     },
   },
-  ,
   {
     id: "gJRGEgBMINw",
     slug: "gJRGEgBMINw",
