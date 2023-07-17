@@ -2,6 +2,7 @@ import { memo, useRef } from "react";
 import { useWindowScroll } from "../hooks";
 import { divideArray } from "../lib/helpers";
 import RowItem from "./RowItem";
+import type { VirtualizedGridProps } from "../types";
 
 interface RowProps extends React.ComponentPropsWithoutRef<typeof RowItem> {
   items: object[];
@@ -22,19 +23,12 @@ const Row = ({ items, gapCls }: RowProps) => (
   </div>
 );
 
-interface VirtualizedGridProps {
-  items: object[];
-  columns: number;
-  containerHeight: number;
-  gapTwClass?: string;
-}
-
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
   columns,
   containerHeight,
   gapTwClass,
-}) => {
+}): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const itemHeight = !containerRef.current
     ? 0

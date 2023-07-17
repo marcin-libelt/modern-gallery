@@ -5,14 +5,16 @@ import { unsplash_photos } from "../data";
 import { createApi } from "unsplash-js";
 import { useWindowSize } from "../hooks";
 import VirtualizedGrid from "./VirtualizedGrid";
-import { array, object } from "prop-types";
+import type { RowItemProps } from "../types";
+import { getColumnCountByScreenWidth } from "../lib/helpers";
 
 const { screens } = require("tailwindcss/defaultTheme");
-const ACCESS_KEY = "U8N1cGbWESoxjSxdXBg-8drXbeH_ApF1AVbvX5po-xg"; // move to .env
+const ACCESS_KEY = "U8N1cGbWESoxjSxdXBg-8drXbeH_ApF1AVbvX5po-xg"; // todo: move to .env
 
-export default function Gallery({ page }: { page: number }) {
-  const [photos, setPhotos] = useState([]);
+export default function Gallery(): JSX.Element {
+  const [photos, setPhotos] = useState<any>([]);
   const [width, height] = useWindowSize();
+
   const serverApi = createApi({
     accessKey: ACCESS_KEY,
   });
@@ -38,16 +40,18 @@ export default function Gallery({ page }: { page: number }) {
     setPhotos(unsplash_photos);
   }, []);
 
-  let cols = 4;
-  if (width < 1024) {
-    cols = 3;
-  }
-  if (width < 768) {
-    cols = 2;
-  }
-  if (width < 640) {
-    cols = 1;
-  }
+  const { cols } = getColumnCountByScreenWidth(width, [
+    {
+      screen: 999999,
+      cols: 4,
+    },
+    {
+      screen: 1024,
+      cols: 3,
+    },
+    { screen: 768, cols: 2 },
+    { screen: 640, cols: 1 },
+  ]);
 
   if (!photos) {
     return <p>Not found</p>;
@@ -57,10 +61,8 @@ export default function Gallery({ page }: { page: number }) {
     <VirtualizedGrid
       items={photos}
       columns={cols}
-      containerHeight={height * 2}
-      gapTwClass={`gap-5 md:gap-7`}
+      containerHeight={height}
+      gapTwClass={`gap-7`}
     />
   );
 }
-
-//
