@@ -1,27 +1,8 @@
 import { memo, useRef } from "react";
 import { useWindowScroll } from "../hooks";
 import { divideArray } from "../lib/helpers";
-import RowItem from "./RowItem";
-import type { VirtualizedGridProps } from "../types";
-
-interface RowProps extends React.ComponentPropsWithoutRef<typeof RowItem> {
-  items: object[];
-  gapCls?: string;
-}
-
-const Row = ({ items, gapCls }: RowProps) => (
-  <div
-    className={`grid  ${gapCls}
-        sm:grid-cols-2
-        md:grid-cols-3 
-        lg:grid-cols-4
-      `}
-  >
-    {items.map((item) => (
-      <RowItem {...item} />
-    ))}
-  </div>
-);
+import Row from "./Row";
+import type { VirtualizedGridProps, ItemProps } from "../types";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
@@ -38,7 +19,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
 
   // The main reasoin of grouping images is to have seamless responsive grid
   // with the accessability approach
-  const groups: object[] = divideArray(items, columns);
+  const groups: Array<ItemProps[]> = divideArray(items, columns);
 
   const startIndex = Math.floor(scrollTop / itemHeight);
   const endIndex = Math.min(
@@ -59,8 +40,8 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
           top: `${startIndex * itemHeight}px`,
         }}
       >
-        {visibleItems.map((group) => (
-          <Row items={group} gapCls={gapTwClass} />
+        {visibleItems.map((group, index) => (
+          <Row key={index} group={group} gapCls={gapTwClass} />
         ))}
       </div>
       <div style={{ height: `${invisibleItemsHeight}px` }} />

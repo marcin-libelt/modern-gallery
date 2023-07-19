@@ -1,12 +1,13 @@
 import Image from "next/image";
-import type { RowItemProps } from "../types";
+import type { ItemProps } from "../types";
 
 const RowItem = ({
   id,
   urls,
   alt_description,
   user,
-}: RowItemProps): JSX.Element => {
+}: ItemProps): JSX.Element => {
+  const commonCls = `absolute text-xs italic`;
   return (
     <div key={id} className={`aspect-square relative group`}>
       <Image
@@ -17,8 +18,18 @@ const RowItem = ({
         className={`max-w-full h-auto group-hover:opacity-60 group-hover:scale-[105%]
               transition-opacity transition-transform`}
       />
-      <h2 className="absolute -bottom-5 left-1 text-xs italic text-gray-700 group-hover:text-gray-300">
-        {user.username}
+      <h2
+        className={`${commonCls} bottom-1 left-2 -translate-x-[1px] -translate-y-[1px] text-gray-700`}
+      >
+        <span
+          aria-hidden
+          className={`${commonCls} bottom-[1px] left-[1px] text-black`}
+        >
+          {user.username}
+        </span>
+        <span aria-hidden className={`${commonCls} bottom-0  `}>
+          {user.username}
+        </span>
       </h2>
     </div>
   );
