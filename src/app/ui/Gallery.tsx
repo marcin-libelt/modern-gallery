@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { StrictMode, useEffect, useState } from "react";
 import { unsplash_photos } from "../data";
 import { createApi } from "unsplash-js";
 import { useWindowSize } from "../hooks";
 import VirtualizedGrid from "./VirtualizedGrid";
-import type { RowItemProps } from "../types";
 import { getColumnCountByScreenWidth } from "../lib/helpers";
+import type { ItemProps } from "../types";
 
 const { screens } = require("tailwindcss/defaultTheme");
 const ACCESS_KEY = "U8N1cGbWESoxjSxdXBg-8drXbeH_ApF1AVbvX5po-xg"; // todo: move to .env
 
 export default function Gallery(): JSX.Element {
-  const [photos, setPhotos] = useState<any>([]);
+  const [photos, setPhotos] = useState<ItemProps[]>();
   const [width, height] = useWindowSize();
 
   const serverApi = createApi({
@@ -20,6 +20,7 @@ export default function Gallery(): JSX.Element {
   });
 
   useEffect(() => {
+    console.log(height);
     /*serverApi.topics
       .getPhotos({
         topicIdOrSlug: "architecture-interior",
@@ -41,10 +42,7 @@ export default function Gallery(): JSX.Element {
   }, []);
 
   const { cols } = getColumnCountByScreenWidth(width, [
-    {
-      screen: 999999,
-      cols: 4,
-    },
+    { screen: 9999, cols: 4 },
     {
       screen: 1024,
       cols: 3,
@@ -58,11 +56,13 @@ export default function Gallery(): JSX.Element {
   }
 
   return (
-    <VirtualizedGrid
-      items={photos}
-      columns={cols}
-      containerHeight={height}
-      gapTwClass={`gap-7`}
-    />
+    <StrictMode>
+      <VirtualizedGrid
+        items={photos}
+        columns={cols}
+        containerHeight={height}
+        gapTwClass={`gap-7`}
+      />
+    </StrictMode>
   );
 }
