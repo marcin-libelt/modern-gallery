@@ -8,7 +8,6 @@ import VirtualizedGrid from "./VirtualizedGrid";
 import { getColumnCountByScreenWidth } from "../lib/helpers";
 import type { ItemProps } from "../types";
 
-const { screens } = require("tailwindcss/defaultTheme");
 const ACCESS_KEY = "U8N1cGbWESoxjSxdXBg-8drXbeH_ApF1AVbvX5po-xg"; // todo: move to .env
 
 export default function Gallery(): JSX.Element {
@@ -20,7 +19,6 @@ export default function Gallery(): JSX.Element {
   });
 
   useEffect(() => {
-    console.log(height);
     /*serverApi.topics
       .getPhotos({
         topicIdOrSlug: "architecture-interior",
@@ -43,26 +41,21 @@ export default function Gallery(): JSX.Element {
 
   const { cols } = getColumnCountByScreenWidth(width, [
     { screen: 9999, cols: 4 },
-    {
-      screen: 1024,
-      cols: 3,
-    },
+    { screen: 1024, cols: 3 },
     { screen: 768, cols: 2 },
     { screen: 640, cols: 1 },
   ]);
 
   if (!photos) {
-    return <p>Not found</p>;
+    return <p>No images found.</p>;
   }
 
   return (
-    <StrictMode>
-      <VirtualizedGrid
-        items={photos}
-        columns={cols}
-        containerHeight={height}
-        gapTwClass={`gap-7`}
-      />
-    </StrictMode>
+    <VirtualizedGrid
+      items={photos}
+      columns={cols}
+      containerHeight={height}
+      gapTwClass={`gap-7`}
+    />
   );
 }

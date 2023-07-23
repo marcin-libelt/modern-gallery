@@ -9,14 +9,15 @@ const RowItem = ({
 }: ItemProps): JSX.Element => {
   const commonCls = `absolute text-xs italic`;
   return (
-    <div key={id} className={`aspect-square relative group`}>
+    <div className={`aspect-square relative group`}>
       <Image
         src={urls.small}
         sizes="33vw"
         fill={true}
+        priority={true}
         alt={alt_description ? alt_description : ""}
         className={`max-w-full h-auto group-hover:opacity-60 group-hover:scale-[105%]
-              transition-opacity transition-transform`}
+              transition-transform`}
       />
       <h2
         className={`${commonCls} bottom-1 left-2 -translate-x-[1px] -translate-y-[1px] text-gray-700`}

@@ -1,11 +1,7 @@
 import Gallery from "./ui/Gallery";
 
-export default function Page({
-  searchParams,
-}: {
-  searchParams: { page: number };
-}): JSX.Element {
-  return <Gallery {...searchParams} />;
+export default function Page(): JSX.Element {
+  return <Gallery />;
 }
 
 const classes = {

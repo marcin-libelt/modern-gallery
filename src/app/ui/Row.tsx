@@ -15,7 +15,7 @@ const Row = ({ group, gapCls }: RowProps) => (
         `}
   >
     {group.map((item) => (
-      <RowItem {...item} />
+      <RowItem key={item.id} {...item} />
     ))}
   </div>
 );

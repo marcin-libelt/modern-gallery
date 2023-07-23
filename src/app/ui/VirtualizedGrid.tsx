@@ -1,5 +1,5 @@
-import { memo, useRef } from "react";
-import { useWindowScroll } from "../hooks";
+import { useEffect, useRef, useState } from "react";
+import { useWindowScroll, useWindowSize } from "../hooks";
 import { divideArray } from "../lib/helpers";
 import Row from "./Row";
 import type { VirtualizedGridProps, ItemProps } from "../types";
@@ -10,12 +10,18 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   containerHeight,
   gapTwClass,
 }): JSX.Element => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const itemHeight = !containerRef.current
-    ? 0
-    : containerRef.current.getBoundingClientRect().width / columns;
-
   const scrollTop = useWindowScroll();
+  const [width] = useWindowSize();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [itemHeight, setItemH] = useState(0);
+
+  useEffect(() => {
+    setItemH(
+      !containerRef.current
+        ? 0
+        : containerRef.current.getBoundingClientRect().width / columns
+    );
+  }, [width]);
 
   // The main reasoin of grouping images is to have seamless responsive grid
   // with the accessability approach
