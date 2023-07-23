@@ -1,6 +1,6 @@
 "use client";
 
-import React, { StrictMode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { unsplash_photos } from "../data";
 import { createApi } from "unsplash-js";
 import { useWindowSize } from "../hooks";
@@ -47,7 +47,7 @@ export default function Gallery(): JSX.Element {
   ]);
 
   if (!photos) {
-    return <p>No images found.</p>;
+    return <p>Loading...</p>;
   }
 
   return (

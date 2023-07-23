@@ -13,10 +13,10 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   const scrollTop = useWindowScroll();
   const [width] = useWindowSize();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [itemHeight, setItemH] = useState(0);
+  const [itemHeight, setItemHeight] = useState(0);
 
   useEffect(() => {
-    setItemH(
+    setItemHeight(
       !containerRef.current
         ? 0
         : containerRef.current.getBoundingClientRect().width / columns
@@ -27,12 +27,16 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   // with the accessability approach
   const groups: Array<ItemProps[]> = divideArray(items, columns);
 
-  const startIndex = Math.floor(scrollTop / itemHeight);
+  let startIndex = Math.floor(scrollTop / itemHeight);
   const endIndex = Math.min(
     startIndex + Math.ceil(containerHeight / itemHeight),
     groups.length
   );
-  const visibleItems = groups.slice(startIndex, endIndex);
+
+  // Amend startIndex and endIndex
+  startIndex > 0 && startIndex--;
+
+  const visibleItems = groups.slice(startIndex, endIndex + 1);
   const invisibleItemsHeight =
     (startIndex + visibleItems.length - endIndex) * itemHeight;
 
