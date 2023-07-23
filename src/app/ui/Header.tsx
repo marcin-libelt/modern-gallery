@@ -1,13 +1,18 @@
+import Heading from "./Heading";
+import LayoutContainer from "./LayoutContainer";
+
 export default function Header(): JSX.Element {
+  const classes = {
+    root: "w-full flex sticky items-center bg-black h-24 justify-start gap-3 items-end",
+  };
+
   return (
-    <header className={classes.root}>
-      <h1 className="text-xl flex">
-        ARCHITECTURE <span className="text-xs">&copy;</span>
-      </h1>
+    <header className="sticky top-0 z-10">
+      <LayoutContainer className={classes.root}>
+        <Heading level={1}>
+          ARCHITECTURE <span className="text-xs">&copy;</span>
+        </Heading>
+      </LayoutContainer>
     </header>
   );
 }
-
-const classes = {
-  root: "w-full flex sticky items-center h-24 bg-black top-0 z-10 justify-start gap-3 items-end",
-};
