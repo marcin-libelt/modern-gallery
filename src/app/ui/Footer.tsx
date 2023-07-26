@@ -14,7 +14,7 @@ export default function Footer(): JSX.Element {
             https://github.com/marcin-libelt
           </a>
         </p>
-        <p>Copyright &copy; Marcin Libelt {new Date().getFullYear()}</p>
+        <p>&copy; {new Date().getFullYear()} by Marcin Libelt </p>
       </LayoutContainer>
     </footer>
   );
