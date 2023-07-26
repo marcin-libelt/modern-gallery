@@ -3,6 +3,7 @@ import { useState } from "react";
 import type { ItemProps } from "../types";
 import Heading from "./Heading";
 import Loading from "./Loading";
+import Link from "next/link";
 
 const RowItem = ({
   color,
@@ -18,36 +19,38 @@ const RowItem = ({
       className={`aspect-square relative group`}
       style={{ backgroundColor: color }}
     >
-      <Loading
-        show={!loaded}
-        className={"flex justify-center items-center h-full"}
-      />
+      <Link href={`/photo/${id}`}>
+        <Loading
+          show={!loaded}
+          className={"flex justify-center items-center h-full"}
+        />
 
-      <Image
-        src={urls.small}
-        sizes="33vw"
-        onLoad={() => setLoaded(true)}
-        fill={true}
-        priority={true}
-        alt={alt_description ? alt_description : ""}
-        className={`max-w-full h-auto group-hover:opacity-60 group-hover:scale-[105%]
+        <Image
+          src={urls.small}
+          sizes="33vw"
+          onLoad={() => setLoaded(true)}
+          fill={true}
+          priority={true}
+          alt={alt_description ? alt_description : ""}
+          className={`max-w-full h-auto group-hover:opacity-60 group-hover:scale-[105%]
               transition-transform`}
-      />
+        />
 
-      <Heading
-        level={2}
-        className={`${commonCls} bottom-1 left-2 -translate-x-[1px] -translate-y-[1px] text-gray-700`}
-      >
-        <span
-          aria-hidden
-          className={`${commonCls} bottom-[1px] left-[1px] text-black`}
+        <Heading
+          level={2}
+          className={`${commonCls} bottom-1 left-2 -translate-x-[1px] -translate-y-[1px] text-gray-700`}
         >
-          {user.username}
-        </span>
-        <span aria-hidden className={`${commonCls} bottom-0  `}>
-          {user.username}
-        </span>
-      </Heading>
+          <span
+            aria-hidden
+            className={`${commonCls} bottom-[1px] left-[1px] text-black`}
+          >
+            {user.username}
+          </span>
+          <span aria-hidden className={`${commonCls} bottom-0  `}>
+            {user.username}
+          </span>
+        </Heading>
+      </Link>
     </div>
   );
 };

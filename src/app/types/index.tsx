@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 import { CSSProperties } from "react";
 
 interface UrlsProps {
   [key: string]: string;
+=======
+export interface HeadingProps {
+  level: number;
+  className?: string;
+>>>>>>> 7f63471 (initial photo page with user description)
 }
 
-interface UnsplashUser {
-  username: string;
+export interface AuthorInfoProps {
+  [key: string]: string;
 }
 
 export interface StylesDictionary {
