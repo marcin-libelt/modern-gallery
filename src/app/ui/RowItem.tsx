@@ -6,6 +6,7 @@ import Loading from "./Loading";
 import Link from "next/link";
 
 const RowItem = ({
+  id,
   color,
   urls,
   alt_description,

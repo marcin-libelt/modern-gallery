@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 import { CSSProperties } from "react";
 
 interface UrlsProps {
   [key: string]: string;
-=======
+}
+
 export interface HeadingProps {
   level: number;
   className?: string;
->>>>>>> 7f63471 (initial photo page with user description)
 }
 
 export interface AuthorInfoProps {
