@@ -1,9 +1,15 @@
+import { CSSProperties } from "react";
+
 interface UrlsProps {
   [key: string]: string;
 }
 
 interface UnsplashUser {
   username: string;
+}
+
+export interface StylesDictionary {
+  [key: string]: CSSProperties;
 }
 
 export interface ItemProps {
