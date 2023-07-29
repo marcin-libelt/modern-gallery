@@ -4,8 +4,13 @@ interface UrlsProps {
   [key: string]: string;
 }
 
-interface UnsplashUser {
-  username: string;
+export interface HeadingProps {
+  level: number;
+  className?: string;
+}
+
+export interface AuthorInfoProps {
+  [key: string]: string;
 }
 
 export interface StylesDictionary {

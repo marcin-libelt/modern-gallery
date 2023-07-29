@@ -1,9 +1,5 @@
 import { PropsWithChildren } from "react";
-
-interface HeadingProps {
-  level: number;
-  className?: string;
-}
+import { HeadingProps } from "../types";
 
 export default function Heading({
   level,

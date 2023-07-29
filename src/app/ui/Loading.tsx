@@ -1,5 +1,4 @@
 import { StylesDictionary } from "@/app/types";
-import { string } from "prop-types";
 
 export default function Loading({
   show,
