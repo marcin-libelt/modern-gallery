@@ -8,29 +8,60 @@ export default function AuthorInfo({
 }: {
   author: AuthorInfoProps;
   className?: string;
-}): JSX.Element {
-  return (
-    <div
-      className={`flex flex-col items-center border-0 border-t text-center group ${className}`}
-    >
-      <Avatar
-        image={author.profile_image.medium}
-        title={author.name}
-        className="mb-4 opacity-90 group-hover:-translate-y-1 group-hover:opacity-100 transition-transform transform-opacity"
-      />
-      <Heading
-        level={2}
-        className="justify-center mb-2"
-      >{`${author.first_name} ${author.last_name}`}</Heading>
+}) {
+  const classes = {
+    root: `flex flex-col items-center border-0 border-t text-center group ${className}`,
+    avatar: `mb-4 opacity-90 group-hover:-translate-y-1 group-hover:opacity-100 transition-transform transform-opacity`,
+  };
+
+  const Bio = ({ copy }: { copy: string }) => {
+    return (
       <p className="text-sm opacity-50 group-hover:opacity-100 transition-opacity">
-        {author.bio || "..."}
+        {copy}
       </p>
-      <p className={"text-xs text-gray-500"}>
-        <a href="" className={"text-gray-500"}>
-          @{author.instagram_username}
+    );
+  };
+
+  const InstagramLink = ({ name }: { name: string }) => {
+    const instagramUrl = `https://instagram.com/${name}`;
+    return (
+      <p className={"text-xs text-gray-500 my-5"}>
+        <a
+          href={instagramUrl}
+          target="_blank"
+          className={"text-gray-500"}
+          aria-label={"Instagram account link opens in new tab window."}
+        >
+          @{name}
         </a>{" "}
         on Instagram
       </p>
+    );
+  };
+
+  const {
+    profile_image,
+    name,
+    first_name,
+    last_name,
+    bio,
+    instagram_username,
+  } = author;
+
+  return (
+    <div className={classes.root}>
+      <Avatar
+        image={profile_image.medium}
+        title={name}
+        className={classes.avatar}
+      />
+      <Heading
+        level={2}
+        title={`${first_name} ${last_name}`}
+        className="mb-2"
+      />
+      {bio && <Bio copy={bio} />}
+      {instagram_username && <InstagramLink name={instagram_username} />}
     </div>
   );
 }
