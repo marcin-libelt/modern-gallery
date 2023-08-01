@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ItemProps } from "@/app/types";
 import AuthorInfo from "@/app/ui/AuthorInfo";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 export default function Photo({
   params,
@@ -36,6 +37,8 @@ export default function Photo({
     return <p>Loading...</p>;
   }
 
+  const timePassed = formatDistanceToNow(new Date(photo.created_at));
+
   return (
     <div className={classes.root}>
       <div className={classes.media}>
@@ -50,7 +53,7 @@ export default function Photo({
         <p className={classes.caption}></p>
       </div>
       <div className={classes.info}>
-        <span className="text-xs text-gray-500">{"2y ago"} </span>
+        <span className="text-xs text-gray-500">{timePassed} </span>
         <span className="text-sm italic text-gray-500 whitespace-nowrap">
           by {photo.user.username}
         </span>
