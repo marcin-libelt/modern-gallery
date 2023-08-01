@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ItemProps } from "@/app/types";
 import AuthorInfo from "@/app/ui/AuthorInfo";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import OtherPhotos from "@/app/ui/OtherPhotos";
 
 export default function Photo({
   params,
@@ -14,11 +15,26 @@ export default function Photo({
   params: { photoId: string };
 }): JSX.Element {
   const [photo, setPhoto] = useState<ItemProps>();
+  const [otherPhotos, setOtherPhotos] = useState<ItemProps[]>([]);
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    const result = unsplash_photos.find((photo) => photo.id === params.photoId);
-    !result ? setStatus("Not image found") : setPhoto(result);
+    const result: ItemProps | undefined = unsplash_photos.find(
+      (photo) => photo.id === params.photoId
+    );
+
+    if (result === undefined) {
+      setStatus("Not image found");
+    } else {
+      const otherPhotos = unsplash_photos.filter(
+        (photo) =>
+          photo.user.username === result.user.username &&
+          photo.id !== params.photoId
+      );
+
+      setPhoto(result);
+      setOtherPhotos(otherPhotos);
+    }
   }, []);
 
   const classes = {
@@ -66,6 +82,9 @@ export default function Photo({
           author={photo.user}
           className={"border-gray-500 py-8"}
         ></AuthorInfo>
+        {otherPhotos.length > 0 && (
+          <OtherPhotos limit={5} photos={otherPhotos} />
+        )}
       </div>
     </div>
   );
