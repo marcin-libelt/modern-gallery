@@ -27,7 +27,7 @@ const RowItem = ({
         />
 
         <Image
-          src={urls.small}
+          src={urls.regular}
           sizes="33vw"
           onLoad={() => setLoaded(true)}
           fill={true}
@@ -38,19 +38,22 @@ const RowItem = ({
         />
 
         <Heading
+          title={
+            <>
+              <span
+                aria-hidden
+                className={`${commonCls} bottom-[1px] left-[1px] text-black`}
+              >
+                {user.username}
+              </span>
+              <span aria-hidden className={`${commonCls} bottom-0  `}>
+                {user.username}
+              </span>
+            </>
+          }
           level={2}
           className={`${commonCls} bottom-1 left-2 -translate-x-[1px] -translate-y-[1px] text-gray-700`}
-        >
-          <span
-            aria-hidden
-            className={`${commonCls} bottom-[1px] left-[1px] text-black`}
-          >
-            {user.username}
-          </span>
-          <span aria-hidden className={`${commonCls} bottom-0  `}>
-            {user.username}
-          </span>
-        </Heading>
+        />
       </Link>
     </div>
   );

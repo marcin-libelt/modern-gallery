@@ -21,7 +21,7 @@ export default function Photo({
   }, []);
 
   const classes = {
-    root: `md:flex md:gap-8`,
+    root: `md:flex md:gap-8 items-start`,
     media: `md:w-7/12 p-2 border border-gray-400`,
     info: `md:w-5/12`,
     caption: `text-xs`,
@@ -54,10 +54,11 @@ export default function Photo({
         <span className="text-sm italic text-gray-500 whitespace-nowrap">
           by {photo.user.username}
         </span>
-        <Heading level={1} className={"mt-3 mb-10 px-3 md:px-0 md:mb-5"}>
-          <p>{photo.description || photo.alt_description} </p>
-        </Heading>
-
+        <Heading
+          level={1}
+          title={photo.description || photo.alt_description}
+          className={"mt-3 mb-10 px-3 md:px-0 md:mb-5"}
+        />
         <AuthorInfo
           author={photo.user}
           className={"border-gray-500 py-8"}

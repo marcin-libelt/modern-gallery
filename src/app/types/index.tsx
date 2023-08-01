@@ -6,6 +6,7 @@ interface UrlsProps {
 
 export interface HeadingProps {
   level: number;
+  title: string | JSX.Element;
   className?: string;
 }
 

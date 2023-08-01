@@ -28,9 +28,7 @@ export default function Header(): JSX.Element {
             <HeadigCopy />
           </Link>
         ) : (
-          <Heading level={1}>
-            <HeadigCopy />
-          </Heading>
+          <Heading level={1} title={<HeadigCopy />} />
         )}
       </LayoutContainer>
     </header>
