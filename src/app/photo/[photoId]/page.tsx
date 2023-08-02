@@ -4,7 +4,8 @@ import Heading from "@/app/ui/Heading";
 import { unsplash_photos } from "@/app/data";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ItemProps } from "@/app/types";
+import Link from "next/link";
+import { AuthorProps, ItemProps } from "@/app/types";
 import AuthorInfo from "@/app/ui/AuthorInfo";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import OtherPhotos from "@/app/ui/OtherPhotos";
@@ -80,10 +81,19 @@ export default function Photo({
         />
         <AuthorInfo
           author={photo.user}
-          className={"border-gray-500 py-8"}
+          className={"border-0 border-t border-gray-500 pt-8 pb-14"}
         ></AuthorInfo>
         {otherPhotos.length > 0 && (
-          <OtherPhotos limit={5} photos={otherPhotos} />
+          <>
+            <OtherPhotos limit={5} photos={otherPhotos} />
+            <Link
+              href={`/author/${photo.user.username}`}
+              className={"text-xs text-gray-500"}
+            >
+              {"See all"}
+              <span className="sr-only">{" from this author"}</span>
+            </Link>
+          </>
         )}
       </div>
     </div>

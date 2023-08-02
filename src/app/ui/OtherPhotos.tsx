@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ItemProps } from "@/app/types";
 import Heading from "./Heading";
-import Link from "next/link";
 
 export default function OtherPhotos({
   limit = 9,
@@ -17,7 +16,7 @@ export default function OtherPhotos({
         title={"More from this author"}
         className="text-white mb-5"
       />
-      <ul className={"grid grid-cols-5 gap-5"}>
+      <ul className={"grid grid-cols-5 gap-5 mb-1"}>
         {photos
           .slice(0, limit)
           .map(({ id, urls, alt_description }: ItemProps) => (
@@ -31,7 +30,6 @@ export default function OtherPhotos({
             </li>
           ))}
       </ul>
-      <Link href={""}>{"See more"}</Link>
     </>
   );
 }

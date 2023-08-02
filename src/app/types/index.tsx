@@ -1,7 +1,8 @@
 import { CSSProperties } from "react";
 
-interface UrlsProps {
-  [key: string]: string;
+export interface GalleryProps {
+  data: ItemProps[];
+  isAuthorList?: boolean;
 }
 
 export interface HeadingProps {
@@ -10,7 +11,7 @@ export interface HeadingProps {
   className?: string;
 }
 
-export interface AuthorInfoProps {
+export interface AuthorProps {
   [key: string]: string;
 }
 

@@ -1,4 +1,4 @@
-import { AuthorInfoProps } from "../types";
+import { AuthorProps } from "../types";
 import Avatar from "./Avatar";
 import Heading from "./Heading";
 
@@ -6,11 +6,11 @@ export default function AuthorInfo({
   author,
   className,
 }: {
-  author: AuthorInfoProps;
+  author: AuthorProps;
   className?: string;
 }) {
   const classes = {
-    root: `flex flex-col items-center border-0 border-t text-center group ${className}`,
+    root: `flex flex-col items-center text-center group ${className}`,
     avatar: `mb-4 opacity-90 group-hover:-translate-y-1 group-hover:opacity-100 transition-transform transform-opacity`,
   };
 
@@ -38,6 +38,8 @@ export default function AuthorInfo({
       </p>
     );
   };
+
+  console.log(author);
 
   const {
     profile_image,
