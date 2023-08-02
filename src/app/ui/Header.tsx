@@ -21,7 +21,7 @@ export default function Header(): JSX.Element {
   );
 
   return (
-    <header className="sticky top-0 z-10">
+    <header className="sticky top-0 z-10 mb-1">
       <LayoutContainer className={classes.root}>
         {!isHomepage ? (
           <Link href={"/"} className={"text-xl flex no-underline"}>
