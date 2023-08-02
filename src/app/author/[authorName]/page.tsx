@@ -15,7 +15,7 @@ export default function AllAuthorPhotos({
   const [photos, setPhotos] = useState<ItemProps[]>([]);
 
   useEffect(() => {
-    const authorPhotos = unsplash_photos.filter(
+    const authorPhotos: ItemProps[] = unsplash_photos.filter(
       (photo) => photo.user.username === params.authorName
     );
 
