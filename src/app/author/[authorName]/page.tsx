@@ -1,45 +1,16 @@
-"use client";
+import AuthorPhotos from "@/app/ui/AuthorPhotos";
 
-import AuthorInfo from "@/app/ui/AuthorInfo";
-import Gallery from "@/app/ui/Gallery";
-import { useEffect, useState } from "react";
-import { unsplash_photos } from "@/app/data";
-import { AuthorProps, ItemProps } from "@/app/types";
-
-export default function AllAuthorPhotos({
-  params,
-}: {
+interface Props {
   params: { authorName: string };
-}): JSX.Element {
-  const [author, setAuthor] = useState<AuthorProps>();
-  const [photos, setPhotos] = useState<ItemProps[]>([]);
+}
 
-  useEffect(() => {
-    const authorPhotos: ItemProps[] = unsplash_photos.filter(
-      (photo) => photo.user.username === params.authorName
-    );
+export default function AllAuthorPhotos({ params }: Props): JSX.Element {
+  return <AuthorPhotos authorName={params.authorName} />;
+}
 
-    if (authorPhotos.length) {
-      setAuthor(authorPhotos[0].user);
-      setPhotos(authorPhotos);
-    }
-  }, []);
-
-  if (!author) {
-    return <p>No author has found</p>;
-  }
-
-  if (!photos.length) {
-    return <p>No photos has found</p>;
-  }
-
-  return (
-    <>
-      <AuthorInfo
-        author={author}
-        className={"mt-8 mb-12 md:w-1/2 md:mx-auto"}
-      />
-      <Gallery data={photos} isAuthorList={true} />
-    </>
-  );
+export function generateMetadata({ params }: Props) {
+  const title = `Architecture gallery - ${params.authorName}'s imaginery.`;
+  return {
+    title,
+  };
 }
