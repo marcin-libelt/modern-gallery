@@ -36,24 +36,6 @@ const RowItem = ({
           className={`max-w-full h-auto group-hover:opacity-60 group-hover:scale-[105%]
               transition-transform`}
         />
-
-        <Heading
-          title={
-            <>
-              <span
-                aria-hidden
-                className={`${commonCls} bottom-[1px] left-[1px] text-black`}
-              >
-                {user.username}
-              </span>
-              <span aria-hidden className={`${commonCls} bottom-0  `}>
-                {user.username}
-              </span>
-            </>
-          }
-          level={2}
-          className={`${commonCls} bottom-1 left-2 -translate-x-[1px] -translate-y-[1px] text-gray-700`}
-        />
       </Link>
     </div>
   );

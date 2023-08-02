@@ -7,5 +7,9 @@ export default function Heading({
   className,
 }: PropsWithChildren<HeadingProps>): JSX.Element {
   const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
-  return <HeadingTag className={`flex ${className}`}>{title}</HeadingTag>;
+  return (
+    <HeadingTag className={`flex ${className ? className : ""}`}>
+      {title}
+    </HeadingTag>
+  );
 }

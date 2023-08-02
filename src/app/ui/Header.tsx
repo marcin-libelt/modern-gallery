@@ -11,7 +11,7 @@ export default function Header(): JSX.Element {
   const isHomepage = pathname === "/";
 
   const classes = {
-    root: "w-full flex sticky items-center bg-black h-24 justify-start gap-3 items-end",
+    root: "flex sticky items-center bg-black h-24 justify-start gap-3 items-end",
   };
 
   const HeadigCopy = () => (

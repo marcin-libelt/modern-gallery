@@ -85,7 +85,7 @@ export default function Photo({
           <Heading
             level={1}
             title={photo.description || photo.alt_description}
-            className="mt-3 mb-10 px-3 md:px-0 md:mb-5"
+            className="mt-3 mb-10 md:mb-5"
           />
           <AuthorInfo
             author={photo.user}
