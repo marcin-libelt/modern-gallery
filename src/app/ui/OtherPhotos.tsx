@@ -16,7 +16,7 @@ export default function OtherPhotos({
         title={"More from this author"}
         className="text-white mb-5"
       />
-      <ul className={"grid grid-cols-5 gap-5 mb-1"}>
+      <ul className={"grid grid-cols-5 gap-5 mb-1"} role="list">
         {photos
           .slice(0, limit)
           .map(({ id, urls, alt_description }: ItemProps) => (

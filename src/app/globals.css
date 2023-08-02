@@ -13,6 +13,18 @@
   }
 
   a {
-    @apply text-white underline hover:no-underline;
+    @apply text-white underline hover:no-underline focus:ring-2;
+  }
+
+  h1 {
+    @apply text-xl;
+  }
+
+  h2 {
+    @apply text-lg;
+  }
+
+  h3 {
+    @apply text-base;
   }
 }

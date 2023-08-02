@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 
 export interface GalleryProps {
   data: ItemProps[];
+  className?: string;
   isAuthorList?: boolean;
 }
 
@@ -12,7 +13,7 @@ export interface HeadingProps {
 }
 
 export interface AuthorProps {
-  [key: string]: string;
+  [key: string]: any;
 }
 
 export interface StylesDictionary {

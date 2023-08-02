@@ -35,7 +35,10 @@ export default function AllAuthorPhotos({
 
   return (
     <>
-      <AuthorInfo author={author} className={"my-5 md:w-1/2 md:mx-auto"} />
+      <AuthorInfo
+        author={author}
+        className={"mt-8 mb-12 md:w-1/2 md:mx-auto"}
+      />
       <Gallery data={photos} isAuthorList={true} />
     </>
   );

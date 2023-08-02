@@ -20,7 +20,7 @@ const RowItem = ({
       className={`aspect-square relative group`}
       style={{ backgroundColor: color }}
     >
-      <Link href={`/photo/${id}`}>
+      <Link href={`/photo/${id}`} className={"h-full block"}>
         <Loading
           show={!loaded}
           className={"flex justify-center items-center h-full"}

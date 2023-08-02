@@ -39,8 +39,6 @@ export default function AuthorInfo({
     );
   };
 
-  console.log(author);
-
   const {
     profile_image,
     name,
@@ -60,7 +58,7 @@ export default function AuthorInfo({
       <Heading
         level={2}
         title={`${first_name} ${last_name}`}
-        className="mb-2"
+        className="text-xl mb-2"
       />
       {bio && <Bio copy={bio} />}
       {instagram_username && <InstagramLink name={instagram_username} />}
