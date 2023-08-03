@@ -9,7 +9,7 @@ export default function AllAuthorPhotos({ params }: Props): JSX.Element {
 }
 
 export function generateMetadata({ params }: Props) {
-  const title = `Architecture gallery - ${params.authorName}'s imaginery.`;
+  const title = `Architecture - ${params.authorName}'s atelier.`;
   return {
     title,
   };

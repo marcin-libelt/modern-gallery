@@ -39,14 +39,7 @@ export default function AuthorInfo({
     );
   };
 
-  const {
-    profile_image,
-    name,
-    first_name,
-    last_name,
-    bio,
-    instagram_username,
-  } = author;
+  const { profile_image, name, bio, instagram_username } = author;
 
   return (
     <div className={classes.root}>
@@ -55,11 +48,7 @@ export default function AuthorInfo({
         title={name}
         className={classes.avatar}
       />
-      <Heading
-        level={2}
-        title={`${first_name} ${last_name}`}
-        className="text-xl mb-2"
-      />
+      <Heading level={2} title={name} className="text-xl mb-2" />
       {bio && <Bio copy={bio} />}
       {instagram_username && <InstagramLink name={instagram_username} />}
     </div>

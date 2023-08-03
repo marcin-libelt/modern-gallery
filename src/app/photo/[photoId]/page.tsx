@@ -59,9 +59,14 @@ export default function Photo({
 
   return (
     <>
-      <button type="button" onClick={() => router.back()}>
-        Back
+      <button
+        type="button"
+        onClick={() => router.back()}
+        className="text-sm float-right relative -mt-16 z-10"
+      >
+        &#171; back to the gallery
       </button>
+
       <div className={classes.root}>
         <div className={classes.media}>
           <Image
