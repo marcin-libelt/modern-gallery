@@ -11,6 +11,20 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import OtherPhotos from "@/app/ui/OtherPhotos";
 import { useRouter } from "next/navigation";
 
+const BackButton = () => {
+  const router = useRouter();
+
+  return (
+    <button
+      type="button"
+      onClick={() => router.back()}
+      className="text-sm float-right relative -mt-16 z-10"
+    >
+      &#171; back to the gallery
+    </button>
+  );
+};
+
 export default function Photo({
   params,
 }: {
@@ -19,7 +33,6 @@ export default function Photo({
   const [photo, setPhoto] = useState<ItemProps>();
   const [otherPhotos, setOtherPhotos] = useState<ItemProps[]>([]);
   const [status, setStatus] = useState("");
-  const router = useRouter();
 
   useEffect(() => {
     const result: ItemProps | undefined = unsplash_photos.find(
@@ -59,14 +72,7 @@ export default function Photo({
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => router.back()}
-        className="text-sm float-right relative -mt-16 z-10"
-      >
-        &#171; back to the gallery
-      </button>
-
+      <BackButton />
       <div className={classes.root}>
         <div className={classes.media}>
           <Image
