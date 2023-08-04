@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import Heading from "@/app/ui/Heading";
 import { unsplash_photos } from "@/app/data";
@@ -9,8 +9,8 @@ import { ItemProps } from "@/app/types";
 import AuthorInfo from "@/app/ui/AuthorInfo";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import OtherPhotos from "@/app/ui/OtherPhotos";
-import { useRouter } from "next/navigation";
-
+//import { useRouter } from "next/navigation";
+/*
 const BackButton = () => {
   const router = useRouter();
 
@@ -23,14 +23,31 @@ const BackButton = () => {
       &#171; back to the gallery
     </button>
   );
-};
+}; */
 
-export default function Photo({
+// export const dynamicParams = false;
+
+const fetchLocalData = new Promise<ItemProps[]>((resolve, reject) => {
+  if (unsplash_photos.length > 0) {
+    resolve(unsplash_photos);
+  }
+});
+
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const photos = await fetchLocalData.then((res) => res);
+
+  return photos.map((photo: ItemProps) => ({
+    photoId: photo.id,
+  }));
+}
+
+export default async function Photo({
   params,
 }: {
   params: { photoId: string };
-}): JSX.Element {
-  const [photo, setPhoto] = useState<ItemProps>();
+}): Promise<JSX.Element> {
+  /* const [photo, setPhoto] = useState<ItemProps>();
   const [otherPhotos, setOtherPhotos] = useState<ItemProps[]>([]);
   const [status, setStatus] = useState("");
 
@@ -51,7 +68,8 @@ export default function Photo({
       setPhoto(result);
       setOtherPhotos(otherPhotos);
     }
-  }, []);
+  }, []); 
+  */
 
   const classes = {
     root: `md:flex md:gap-8 items-start`,
@@ -59,7 +77,7 @@ export default function Photo({
     info: `md:w-5/12`,
     caption: `text-xs`,
   };
-
+  /*
   if (status) {
     return <p>{status}</p>;
   }
@@ -69,8 +87,9 @@ export default function Photo({
   }
 
   const timePassed = formatDistanceToNow(new Date(photo.created_at));
-
-  return (
+*/
+  return <h1>{params.photoId}</h1>;
+  /*  return (
     <>
       <BackButton />
       <div className={classes.root}>
@@ -117,5 +136,5 @@ export default function Photo({
         </div>
       </div>
     </>
-  );
+  );*/
 }

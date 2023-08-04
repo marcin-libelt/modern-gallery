@@ -10467,7 +10467,10 @@ const unsplash_photos_all = [
   },
 ];
 export const unsplash_photos = unsplash_photos_all;
-/*export const unsplash_photos = unsplash_photos_all
+
+/* filter Author with 1 and more Photos */
+/*
+const unsplash_photos = unsplash_photos_all
   .reduce((accu, current) => {
     const count = unsplash_photos_all.filter(
       (p) => p.user.id === current.user.id
