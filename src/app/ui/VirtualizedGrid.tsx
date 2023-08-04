@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useWindowScroll, useWindowSize } from "../hooks";
-import { divideArray } from "../lib/helpers";
+import { divideArray } from "../utils/helpers";
 import Row from "./Row";
 import type { VirtualizedGridProps, ItemProps } from "../types";
 
