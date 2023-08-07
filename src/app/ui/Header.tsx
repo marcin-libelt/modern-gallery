@@ -14,11 +14,7 @@ export default function Header(): JSX.Element {
     root: "flex sticky items-center bg-black h-24 justify-start gap-3 items-end",
   };
 
-  const HeadigCopy = () => (
-    <>
-      ARCHITECTURE <span className="text-xs">&copy;</span>
-    </>
-  );
+  const HeadigCopy = () => <p className="text-white">ARCHITECTURE</p>;
 
   return (
     <header className="sticky top-0 z-10 mb-1">

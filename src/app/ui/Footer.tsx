@@ -10,7 +10,7 @@ export default function Footer(): JSX.Element {
       <LayoutContainer>
         <p>
           GitHub:{" "}
-          <a href="https://github.com/marcin-libelt">
+          <a href="https://github.com/marcin-libelt" className="text-white">
             https://github.com/marcin-libelt
           </a>
         </p>
