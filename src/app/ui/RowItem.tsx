@@ -21,10 +21,7 @@ const RowItem = ({
       style={{ backgroundColor: color }}
     >
       <Link href={`/photo/${id}`} className={"h-full block"}>
-        <Loading
-          show={!loaded}
-          className={"flex justify-center items-center h-full"}
-        />
+        {!loaded && <Loading />}
 
         <Image
           src={urls.raw}
