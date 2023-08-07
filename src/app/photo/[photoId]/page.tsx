@@ -9,6 +9,7 @@ import AuthorInfo from "@/app/ui/AuthorInfo";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import OtherPhotos from "@/app/ui/OtherPhotos";
 import BackButton from "@/app/ui/BackButton";
+import GalleryImage from "@/app/ui/GalleryImage";
 
 const fetchLocalData = new Promise<ItemProps[]>((resolve, reject) => {
   if (unsplash_photos.length > 0) {
@@ -52,12 +53,7 @@ const Photo = async ({
       <BackButton />
       <div className={classes.root}>
         <div className={classes.media}>
-          <Image
-            src={photo.urls.regular}
-            width={photo.width}
-            height={photo.height}
-            alt={photo.alt_description ? photo.alt_description : ""}
-          />
+          <GalleryImage photo={photo} />
           <p className={classes.caption}></p>
         </div>
         <div className={classes.info}>

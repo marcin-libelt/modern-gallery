@@ -13,7 +13,7 @@ export function normalizeUnsplashUrl(src: string) {
 /** A custom loader that utilizes the Unsplash API's dynamic image sizing to optimize images
       @see https://unsplash.com/documentation#supported-parameters
   */
-export const unsplashLoader: ImageLoader = ({ src, width, quality }) => {
+const unsplashLoader: ImageLoader = ({ src, width, quality }) => {
   const url = normalizeUnsplashUrl(src);
 
   const params = url.searchParams;
@@ -28,3 +28,5 @@ export const unsplashLoader: ImageLoader = ({ src, width, quality }) => {
 
   return url.href;
 };
+
+export default unsplashLoader;

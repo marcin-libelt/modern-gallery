@@ -15,6 +15,8 @@ const nextConfig = {
         pathname: "/placeholder-avatars/*",
       },
     ],
+    loader: "custom",
+    loaderFile: "./src/app/utils/unsplashLoader.ts",
   },
   experimental: {
     serverActions: true,

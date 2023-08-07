@@ -27,11 +27,11 @@ const RowItem = ({
         />
 
         <Image
-          src={urls.regular}
-          sizes="33vw"
+          src={urls.raw}
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
           onLoad={() => setLoaded(true)}
-          fill={true}
-          priority={true}
+          fill
+          priority
           alt={alt_description ? alt_description : ""}
           className={`max-w-full h-auto group-hover:opacity-60 group-hover:scale-[105%]
               transition-transform`}
