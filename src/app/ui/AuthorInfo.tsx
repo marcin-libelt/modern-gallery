@@ -11,25 +11,21 @@ export default function AuthorInfo({
 }) {
   const classes = {
     root: `flex flex-col items-center text-center group ${className}`,
-    avatar: `mb-4 opacity-90 group-hover:-translate-y-1 group-hover:opacity-100 transition-transform transform-opacity`,
+    avatar: `mb-4`,
   };
 
   const Bio = ({ copy }: { copy: string }) => {
-    return (
-      <p className="text-sm opacity-50 group-hover:opacity-100 transition-opacity">
-        {copy}
-      </p>
-    );
+    return <p className="text-sm">{copy}</p>;
   };
 
   const InstagramLink = ({ name }: { name: string }) => {
     const instagramUrl = `https://instagram.com/${name}`;
     return (
-      <p className={"text-xs text-gray-500 my-5"}>
+      <p className={"text-xs text-gray-400 my-5"}>
         <a
           href={instagramUrl}
           target="_blank"
-          className={"text-gray-500"}
+          className={"text-gray-400"}
           aria-label={"Instagram account link opens in new tab window."}
         >
           @{name}

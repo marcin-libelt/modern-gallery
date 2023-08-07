@@ -57,12 +57,12 @@ const Photo = async ({
           <p className={classes.caption}></p>
         </div>
         <div className={classes.info}>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-gray-400">
             <span className="sr-only">{"Photo added "}</span>
             {timePassed}
             <span className="sr-only">{" ago "}</span>{" "}
           </span>
-          <span className="text-sm italic text-gray-500 whitespace-nowrap">
+          <span className="text-sm italic text-gray-400 whitespace-nowrap">
             by {photo.user.username}
           </span>
           <Heading
@@ -72,14 +72,14 @@ const Photo = async ({
           />
           <AuthorInfo
             author={photo.user}
-            className="border-0 border-t border-gray-500 pt-8 pb-14"
+            className="border-0 border-t border-gray-400 pt-8 pb-14"
           ></AuthorInfo>
           {otherPhotos.length > 0 && (
             <>
               <OtherPhotos limit={5} photos={otherPhotos} />
               <Link
                 href={`/author/${photo.user.username}`}
-                className="text-xs text-gray-500"
+                className="text-xs text-gray-400"
               >
                 {"See all"}
                 <span className="sr-only">{" from this author"}</span>

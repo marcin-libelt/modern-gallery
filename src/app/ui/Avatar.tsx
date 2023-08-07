@@ -13,6 +13,7 @@ export default function Avatar({
 }): JSX.Element {
   return (
     <Image
+      sizes="10vw"
       src={image}
       width={size}
       height={size}
