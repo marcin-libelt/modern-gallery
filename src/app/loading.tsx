@@ -1,3 +1,5 @@
+import LoadingIndicaor from "@/app/ui/Loading";
+
 const Loading = () => {
   const fakeData = [...Array(20)];
 
@@ -11,7 +13,9 @@ const Loading = () => {
             "
       >
         {fakeData.map((i) => (
-          <div className="aspect-square relative group bg-gray-900" />
+          <div className="aspect-square relative group bg-gray-400">
+            <LoadingIndicaor />
+          </div>
         ))}
       </div>
     </div>
