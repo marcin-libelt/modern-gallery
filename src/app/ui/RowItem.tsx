@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { ItemProps } from "../types";
-import Heading from "./Heading";
 import Loading from "./Loading";
 import Link from "next/link";
 
@@ -13,7 +12,6 @@ const RowItem = ({
   user,
 }: ItemProps): JSX.Element => {
   const [loaded, setLoaded] = useState(false);
-  const commonCls = `absolute text-xs italic`;
 
   return (
     <Link
