@@ -12,8 +12,8 @@ const Loading = () => {
               lg:grid-cols-4
             "
       >
-        {fakeData.map((i) => (
-          <div className="aspect-square relative group bg-gray-800">
+        {fakeData.map((n, i) => (
+          <div key={i} className="aspect-square relative group bg-gray-800">
             <LoadingIndicaor />
           </div>
         ))}
