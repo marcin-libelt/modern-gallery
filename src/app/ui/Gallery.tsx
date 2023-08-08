@@ -1,6 +1,5 @@
 "use client";
 
-import { createApi } from "unsplash-js";
 import { useWindowSize } from "../hooks";
 import VirtualizedGrid from "./VirtualizedGrid";
 import type { ScreenToColumns, GalleryProps } from "../types";
