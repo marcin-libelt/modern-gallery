@@ -1,15 +1,16 @@
-import Heading from "@/app/ui/Heading";
+import {
+  AuthorInfo,
+  BackButton,
+  GalleryImage,
+  Heading,
+  OtherPhotos,
+} from "@/app/components";
 import { unsplash_photos } from "@/app/data";
-import Image from "next/image";
 import Link from "next/link";
 import { ItemProps } from "@/app/types";
 import { getItem } from "@/app/utils/get-items";
 import { getOtherPhotos } from "@/app/utils/get-other-photos";
-import AuthorInfo from "@/app/ui/AuthorInfo";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import OtherPhotos from "@/app/ui/OtherPhotos";
-import BackButton from "@/app/ui/BackButton";
-import GalleryImage from "@/app/ui/GalleryImage";
 
 const fetchLocalData = new Promise<ItemProps[]>((resolve, reject) => {
   if (unsplash_photos.length > 0) {

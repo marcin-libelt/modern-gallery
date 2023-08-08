@@ -1,4 +1,4 @@
-import LoadingIndicaor from "@/app/ui/Loading";
+import LoadingIndicaor from "@/app/components/Loading";
 
 const Loading = () => {
   const fakeData = [...Array(20)];

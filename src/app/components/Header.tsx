@@ -1,15 +1,12 @@
 "use client";
 
-import Heading from "./Heading";
-import LayoutContainer from "./LayoutContainer";
+import { Heading, LayoutContainer } from "../components";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Header(): JSX.Element {
   const pathname = usePathname();
-
   const isHomepage = pathname === "/";
-
   const classes = {
     root: "flex sticky items-center bg-black h-24 justify-start gap-3 items-end",
   };

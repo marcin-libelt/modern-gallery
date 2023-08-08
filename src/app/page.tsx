@@ -1,4 +1,4 @@
-import Gallery from "./ui/Gallery";
+import { Gallery } from "./components";
 import { getItems } from "./utils/get-items";
 
 export default async function Page(): Promise<JSX.Element> {

@@ -1,4 +1,4 @@
-import RowItem from "./RowItem";
+import { RowItem } from "../components";
 import type { ItemProps } from "../types";
 
 interface RowProps {

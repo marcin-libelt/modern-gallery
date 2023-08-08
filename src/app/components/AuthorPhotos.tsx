@@ -1,7 +1,6 @@
 "use client";
 
-import AuthorInfo from "@/app/ui/AuthorInfo";
-import Gallery from "@/app/ui/Gallery";
+import { AuthorInfo, Gallery } from "../components";
 import { useEffect, useState } from "react";
 import { unsplash_photos } from "@/app/data";
 import { AuthorProps, ItemProps } from "@/app/types";

@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { useState } from "react";
 import type { ItemProps } from "../types";
-import Loading from "./Loading";
+import { Loading } from "../components";
 import Link from "next/link";
 
 const RowItem = ({

@@ -1,7 +1,9 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { useWindowScroll, useWindowSize } from "../hooks";
 import { divideArray } from "../utils/helpers";
-import Row from "./Row";
+import { Row } from "../components";
 import type { VirtualizedGridProps, ItemProps } from "../types";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({

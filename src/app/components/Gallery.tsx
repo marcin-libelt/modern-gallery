@@ -1,7 +1,7 @@
 "use client";
 
 import { useWindowSize } from "../hooks";
-import VirtualizedGrid from "./VirtualizedGrid";
+import { VirtualizedGrid } from "../components";
 import type { ScreenToColumns, GalleryProps } from "../types";
 
 const ACCESS_KEY = "U8N1cGbWESoxjSxdXBg-8drXbeH_ApF1AVbvX5po-xg"; // todo: move to .env

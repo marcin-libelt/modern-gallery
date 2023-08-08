@@ -1,4 +1,4 @@
-import AuthorPhotos from "@/app/ui/AuthorPhotos";
+import { AuthorPhotos } from "@/app/components";
 
 interface Props {
   params: { authorName: string };

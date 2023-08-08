@@ -1,6 +1,5 @@
 import { AuthorProps } from "../types";
-import Avatar from "./Avatar";
-import Heading from "./Heading";
+import { Avatar, Heading } from "../components";
 
 export default function AuthorInfo({
   author,

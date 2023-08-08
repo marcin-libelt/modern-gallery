@@ -1,4 +1,4 @@
-import LayoutContainer from "./LayoutContainer";
+import { LayoutContainer } from "../components";
 
 export default function Footer(): JSX.Element {
   const classes = {

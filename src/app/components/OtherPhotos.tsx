@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ItemProps } from "@/app/types";
-import Heading from "./Heading";
+import { Heading } from "../components";
 
 export default function OtherPhotos({
   limit = 9,
