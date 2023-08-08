@@ -1,5 +1,5 @@
 import { Gallery } from "./components";
-import { getItems } from "./utils/get-items";
+import { getItems } from "./utils/get-data";
 
 export default async function Page(): Promise<JSX.Element> {
   const photos = await getItems();

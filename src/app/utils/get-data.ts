@@ -2,26 +2,16 @@ import { cache } from "react";
 import { unsplash_photos } from "../data";
 import { ItemProps, AuthorProps } from "../types";
 
-export const revalidate = 3600; // revalidate the data at most every hour
+export const revalidate = 3600;
 
 const getItem = cache(async (id: string): Promise<ItemProps | undefined> => {
-  // mimic fetch delay
-  await new Promise((resolve) => {
-    setTimeout(resolve, 2000);
-  });
-
   return unsplash_photos.find((photo) => photo.id === id);
 });
 
 const getItems = cache(async (username?: string): Promise<ItemProps[]> => {
-  // mimic fetch delay
-  await new Promise((resolve) => {
-    setTimeout(resolve, 2000);
-  });
   if (!username) {
     return unsplash_photos;
   }
-
   return unsplash_photos.filter((photo) => photo.user.username === username);
 });
 
@@ -34,4 +24,14 @@ const getAuthor = cache(
   }
 );
 
-export { getItems, getItem, getAuthor };
+const getOtherPhotos = cache(
+  async (id: string, username: string): Promise<ItemProps[]> => {
+    const otherPhotos = unsplash_photos.filter(
+      (photo) => photo.user.username === username && photo.id !== id
+    );
+
+    return otherPhotos;
+  }
+);
+
+export { getItems, getItem, getAuthor, getOtherPhotos };

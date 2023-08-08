@@ -8,24 +8,8 @@ import {
 import { unsplash_photos } from "@/app/data";
 import Link from "next/link";
 import { ItemProps } from "@/app/types";
-import { getItem } from "@/app/utils/get-items";
-import { getOtherPhotos } from "@/app/utils/get-other-photos";
+import { getItem, getOtherPhotos } from "@/app/utils/get-data";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-
-const fetchLocalData = new Promise<ItemProps[]>((resolve, reject) => {
-  if (unsplash_photos.length > 0) {
-    resolve(unsplash_photos);
-  }
-});
-
-export const dynamicParams = false;
-export async function generateStaticParams() {
-  const photos = await fetchLocalData.then((res) => res);
-
-  return photos.map((photo: ItemProps) => ({
-    photoId: photo.id,
-  }));
-}
 
 const Photo = async ({
   params,
@@ -92,5 +76,20 @@ const Photo = async ({
     </>
   );
 };
+
+const fetchLocalData = new Promise<ItemProps[]>((resolve, reject) => {
+  if (unsplash_photos.length > 0) {
+    resolve(unsplash_photos);
+  }
+});
+
+export const dynamicParams = false;
+export async function generateStaticParams() {
+  const photos = await fetchLocalData.then((res) => res);
+
+  return photos.map((photo: ItemProps) => ({
+    photoId: photo.id,
+  }));
+}
 
 export default Photo;

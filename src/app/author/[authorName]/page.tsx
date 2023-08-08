@@ -1,6 +1,5 @@
 import { AuthorInfo, Gallery } from "@/app/components";
-import { AuthorProps, ItemProps } from "@/app/types";
-import { getAuthor, getItems } from "@/app/utils/get-items";
+import { getAuthor, getItems } from "@/app/utils/get-data";
 
 interface Props {
   params: { authorName: string };
@@ -9,8 +8,10 @@ interface Props {
 export default async function AllAuthorPhotos({
   params,
 }: Props): Promise<JSX.Element> {
-  const author = await getAuthor(params.authorName);
-  const photos = await getItems(params.authorName);
+  const [author, photos] = await Promise.all([
+    getAuthor(params.authorName),
+    getItems(params.authorName),
+  ]);
 
   if (!author) {
     throw new Error("No author found");

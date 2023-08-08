@@ -13,7 +13,7 @@ const Loading = () => {
             "
       >
         {fakeData.map((i) => (
-          <div className="aspect-square relative group bg-gray-400">
+          <div className="aspect-square relative group bg-gray-800">
             <LoadingIndicaor />
           </div>
         ))}
