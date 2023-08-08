@@ -1,5 +1,4 @@
 import AuthorInfo from "./AuthorInfo";
-import AuthorPhotos from "./AuthorPhotos";
 import Avatar from "./Avatar";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
@@ -16,7 +15,6 @@ import VirtualizedGrid from "./VirtualizedGrid";
 
 export {
   AuthorInfo,
-  AuthorPhotos,
   Avatar,
   BackButton,
   Footer,
