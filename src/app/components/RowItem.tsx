@@ -18,7 +18,9 @@ const RowItem = ({
   return (
     <Link
       href={`/photo/${id}`}
-      className={"aspect-square relative group h-full block"}
+      className={
+        "aspect-square relative h-full block hover:opacity-70 transition-opacity"
+      }
       style={{ backgroundColor: color }}
     >
       {!loaded && <Loading />}
@@ -30,8 +32,7 @@ const RowItem = ({
         fill
         priority
         alt={alt_description ? alt_description : ""}
-        className={`max-w-full h-auto group-hover:opacity-60 group-hover:scale-[105%]
-              transition-transform`}
+        className={"max-w-full h-auto"}
       />
     </Link>
   );
