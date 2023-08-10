@@ -2,13 +2,13 @@ import Image from "next/image";
 import { ItemProps } from "@/app/types";
 import { Heading } from "../components";
 
-export default function OtherPhotos({
+const OtherPhotos = ({
   limit = 9,
   photos,
 }: {
   limit: number;
   photos: ItemProps[];
-}): JSX.Element {
+}): JSX.Element => {
   return (
     <>
       <Heading
@@ -32,4 +32,8 @@ export default function OtherPhotos({
       </ul>
     </>
   );
-}
+};
+
+OtherPhotos.displayName = "OtherPhotos";
+
+export default OtherPhotos;

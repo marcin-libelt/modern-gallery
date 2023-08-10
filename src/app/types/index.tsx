@@ -35,3 +35,8 @@ export interface ScreenToColumns {
   screen: number;
   cols: number;
 }
+
+export interface RowProps {
+  group: ItemProps[];
+  gapCls?: string;
+}

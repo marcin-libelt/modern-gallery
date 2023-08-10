@@ -1,10 +1,5 @@
 import { RowItem } from "../components";
-import type { ItemProps } from "../types";
-
-interface RowProps {
-  group: ItemProps[];
-  gapCls?: string;
-}
+import type { RowProps } from "../types";
 
 const Row = ({ group, gapCls }: RowProps) => (
   <div
@@ -19,5 +14,7 @@ const Row = ({ group, gapCls }: RowProps) => (
     ))}
   </div>
 );
+
+Row.displayName = "Row";
 
 export default Row;

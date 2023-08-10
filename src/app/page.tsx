@@ -1,7 +1,7 @@
 import { Gallery } from "./components";
 import { getItems } from "./utils/get-data";
 
-export default async function Page(): Promise<JSX.Element> {
+const LandingPage = async (): Promise<JSX.Element> => {
   const photos = await getItems();
 
   const Gradient = () => (
@@ -14,4 +14,7 @@ export default async function Page(): Promise<JSX.Element> {
       <Gallery data={photos} />
     </>
   );
-}
+};
+
+LandingPage.displayName = "LandingPage";
+export default LandingPage;

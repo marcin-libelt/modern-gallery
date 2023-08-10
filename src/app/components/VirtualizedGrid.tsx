@@ -26,7 +26,6 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   }, [width]);
 
   // The main reasoin of grouping images is to have seamless responsive grid
-  // with the accessability approach
   const groups: Array<ItemProps[]> = divideArray(items, columns);
 
   let startIndex = Math.floor(scrollTop / itemHeight);
@@ -60,5 +59,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
     </div>
   );
 };
+
+VirtualizedGrid.displayName = "VirtualizedGrid";
 
 export default VirtualizedGrid;

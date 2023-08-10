@@ -4,7 +4,7 @@ import { Heading, LayoutContainer } from "../components";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function Header(): JSX.Element {
+const Header = (): JSX.Element => {
   const pathname = usePathname();
   const isHomepage = pathname === "/";
   const classes = {
@@ -26,4 +26,8 @@ export default function Header(): JSX.Element {
       </LayoutContainer>
     </header>
   );
-}
+};
+
+Header.displayName = "Header";
+
+export default Header;

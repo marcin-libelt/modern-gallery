@@ -1,6 +1,6 @@
 import { StylesDictionary } from "@/app/types";
 
-export default function Loading(): JSX.Element {
+const Loading = (): JSX.Element => {
   const styles: StylesDictionary = {
     root: {
       background: `linear-gradient(
@@ -14,4 +14,8 @@ export default function Loading(): JSX.Element {
   };
 
   return <div className="h-full animate-pendulum" style={styles.root} />;
-}
+};
+
+Loading.displayName = "Loading";
+
+export default Loading;

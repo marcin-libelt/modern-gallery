@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Avatar({
+const Avatar = ({
   image,
   title,
   size = 50,
@@ -10,7 +10,7 @@ export default function Avatar({
   title?: string;
   size?: number;
   className?: string;
-}): JSX.Element {
+}): JSX.Element => {
   return (
     <Image
       sizes="10vw"
@@ -21,4 +21,8 @@ export default function Avatar({
       className={`rounded-full ${className}`}
     />
   );
-}
+};
+
+Avatar.displayName = "Avatar";
+
+export default Avatar;

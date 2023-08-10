@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { ItemProps } from "../types";
 
@@ -16,5 +14,7 @@ const GalleryImage = ({ photo }: ItemProps) => {
     />
   );
 };
+
+GalleryImage.displayName = "GalleryImage";
 
 export default GalleryImage;

@@ -11,7 +11,6 @@ const RowItem = ({
   color,
   urls,
   alt_description,
-  user,
 }: ItemProps): JSX.Element => {
   const [loaded, setLoaded] = useState(false);
 
@@ -37,5 +36,7 @@ const RowItem = ({
     </Link>
   );
 };
+
+RowItem.displayName = "RowItem";
 
 export default RowItem;

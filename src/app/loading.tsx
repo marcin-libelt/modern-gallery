@@ -1,6 +1,6 @@
 import LoadingIndicaor from "@/app/components/Loading";
 
-const Loading = () => {
+const LandingLoading = () => {
   const fakeData = [...Array(20)];
 
   return (
@@ -22,4 +22,6 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+LandingLoading.displayName = "LandingLoading"
+
+export default LandingLoading;

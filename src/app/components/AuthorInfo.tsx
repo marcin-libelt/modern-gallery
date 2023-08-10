@@ -1,13 +1,13 @@
 import { AuthorProps } from "../types";
 import { Avatar, Heading } from "../components";
 
-export default function AuthorInfo({
+const AuthorInfo = ({
   author,
   className,
 }: {
   author: AuthorProps;
   className?: string;
-}) {
+}) => {
   const classes = {
     root: `flex flex-col items-center text-center group ${className}`,
     avatar: `mb-4`,
@@ -48,4 +48,6 @@ export default function AuthorInfo({
       {instagram_username && <InstagramLink name={instagram_username} />}
     </div>
   );
-}
+};
+AuthorInfo.displayName = "AuthorInfo";
+export default AuthorInfo;

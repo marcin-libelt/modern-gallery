@@ -5,9 +5,7 @@ interface Props {
   params: { authorName: string };
 }
 
-export default async function AllAuthorPhotos({
-  params,
-}: Props): Promise<JSX.Element> {
+const AuthorPage = async ({ params }: Props): Promise<JSX.Element> => {
   const [author, photos] = await Promise.all([
     getAuthor(params.authorName),
     getItems(params.authorName),
@@ -23,10 +21,10 @@ export default async function AllAuthorPhotos({
         author={author}
         className={"mt-8 mb-12 md:w-1/2 md:mx-auto"}
       />
-      <Gallery data={photos} isAuthorList={true} />
+      <Gallery data={photos} />
     </>
   );
-}
+};
 
 export function generateMetadata({ params }: Props) {
   const title = `Architecture - ${params.authorName}'s atelier.`;
@@ -34,3 +32,7 @@ export function generateMetadata({ params }: Props) {
     title,
   };
 }
+
+AuthorPage.displayName = "AuthorPage";
+
+export default AuthorPage;

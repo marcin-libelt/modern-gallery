@@ -5,13 +5,12 @@ import {
   Heading,
   OtherPhotos,
 } from "@/app/components";
-import { unsplash_photos } from "@/app/data";
 import Link from "next/link";
 import { ItemProps } from "@/app/types";
-import { getItem, getOtherPhotos } from "@/app/utils/get-data";
+import { getItem, getItems, getOtherPhotos } from "@/app/utils/get-data";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
-const Photo = async ({
+const PhotoPage = async ({
   params,
 }: {
   params: { photoId: string };
@@ -77,19 +76,16 @@ const Photo = async ({
   );
 };
 
-const fetchLocalData = new Promise<ItemProps[]>((resolve, reject) => {
-  if (unsplash_photos.length > 0) {
-    resolve(unsplash_photos);
-  }
-});
-
 export const dynamicParams = false;
-export async function generateStaticParams() {
-  const photos = await fetchLocalData.then((res) => res);
+
+export const generateStaticParams = async () => {
+  const photos = await getItems();
 
   return photos.map((photo: ItemProps) => ({
     photoId: photo.id,
   }));
-}
+};
 
-export default Photo;
+PhotoPage.displayName = "PhotoPage";
+
+export default PhotoPage;

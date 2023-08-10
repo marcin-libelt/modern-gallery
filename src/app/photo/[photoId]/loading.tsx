@@ -1,7 +1,8 @@
 import { Loading } from "@/app/components";
+import { StylesDictionary } from "@/app/types";
 
-export default function Skeleton() {
-  const styles = {
+const PhotoSkeleton = () => {
+  const styles: StylesDictionary = {
     avatar: {
       width: 50,
       height: 50,
@@ -47,4 +48,8 @@ export default function Skeleton() {
       </div>
     </>
   );
-}
+};
+
+PhotoSkeleton.displayName = "PhotoSkeleton";
+
+export default PhotoSkeleton;

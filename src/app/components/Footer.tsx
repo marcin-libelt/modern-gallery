@@ -1,6 +1,6 @@
 import { LayoutContainer } from "../components";
 
-export default function Footer(): JSX.Element {
+const Footer = (): JSX.Element => {
   const classes = {
     root: "mx-auto w-full flex justify-between text-xs pt-5 my-5",
   };
@@ -18,4 +18,8 @@ export default function Footer(): JSX.Element {
       </LayoutContainer>
     </footer>
   );
-}
+};
+
+Footer.displayName = "Footer";
+
+export default Footer;
