@@ -17,6 +17,7 @@ const RowItem = ({
   return (
     <Link
       href={`/photo/${id}`}
+      scroll={true}
       className={
         "aspect-square relative h-full block hover:opacity-70 transition-opacity"
       }
