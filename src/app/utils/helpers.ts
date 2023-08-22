@@ -1,5 +1,3 @@
-import { number, object } from "prop-types";
-
 /**
  * Takes a collection and divide it for smallest chunks returning the array of chunks
  * @param {array} collection

@@ -9,7 +9,6 @@ import Heading from "./Heading";
 import LayoutContainer from "./LayoutContainer";
 import Loading from "./Loading";
 import OtherPhotos from "./OtherPhotos";
-import Row from "./Row";
 import RowItem from "./RowItem";
 import VirtualizedGrid from "./VirtualizedGrid";
 
@@ -25,7 +24,6 @@ export {
   LayoutContainer,
   Loading,
   OtherPhotos,
-  Row,
   RowItem,
   VirtualizedGrid,
 };

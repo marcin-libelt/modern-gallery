@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useWindowScroll, useWindowSize } from "../hooks";
-import { divideArray } from "../utils/helpers";
-import { Row } from "../components";
-import type { VirtualizedGridProps, ItemProps } from "../types";
+import { useWindowScroll, useWindowSize, useVirtualizedList } from "../hooks";
+import { RowItem } from "../components";
+import type { VirtualizedGridProps } from "../types";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
@@ -25,37 +24,29 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
     );
   }, [width]);
 
-  // The main reasoin of grouping images is to have seamless responsive grid
-  const groups: Array<ItemProps[]> = divideArray(items, columns);
-
-  let startIndex = Math.floor(scrollTop / itemHeight);
-  const endIndex = Math.min(
-    startIndex + Math.ceil(containerHeight / itemHeight),
-    groups.length
-  );
-
-  // Amend startIndex and endIndex
-  startIndex > 0 && startIndex--;
-
-  const visibleItems = groups.slice(startIndex, endIndex + 1);
-  const invisibleItemsHeight =
-    (startIndex + visibleItems.length - endIndex) * itemHeight;
+  const { startIndex, visibleItems } = useVirtualizedList({
+    scrollTop,
+    itemHeight,
+    columns,
+    items,
+    containerHeight,
+  });
 
   return (
-    <div style={{ height: `${groups.length * itemHeight}px` }}>
+    <div style={{ height: `${(items.length * itemHeight) / columns}px` }}>
       <div
-        className={`${gapTwClass} grid relative`}
+        className={`gap-7 grid relative sm:grid-cols-2
+        md:grid-cols-3 
+        lg:grid-cols-4`}
         ref={containerRef}
         style={{
-          height: `${visibleItems.length * itemHeight}px`,
           top: `${startIndex * itemHeight}px`,
         }}
       >
-        {visibleItems.map((group, index) => (
-          <Row key={index} group={group} gapCls={gapTwClass} />
+        {visibleItems.map((item, index) => (
+          <RowItem key={index} {...item} />
         ))}
       </div>
-      <div style={{ height: `${invisibleItemsHeight}px` }} />
     </div>
   );
 };
