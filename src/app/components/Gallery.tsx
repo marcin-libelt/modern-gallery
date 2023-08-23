@@ -43,7 +43,7 @@ const Gallery = ({ data }: GalleryProps): JSX.Element => {
       items={data}
       columns={cols}
       containerHeight={height}
-      gap={100}
+      gap={20}
     />
   );
 };

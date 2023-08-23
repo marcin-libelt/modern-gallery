@@ -7,15 +7,16 @@ export default function useVirtualizedList({
   columns,
   items,
   containerHeight,
+  gap,
 }: {
   scrollTop: number;
   itemHeight: number;
   columns: number;
   items: ItemProps[];
   containerHeight: number;
+  gap: number;
 }) {
-  let startIndex = Math.floor(scrollTop / itemHeight);
-  startIndex > 0 && startIndex--;
+  let startIndex = Math.floor(scrollTop / (itemHeight + gap));
 
   const endIndex = Math.min(
     startIndex + Math.ceil(containerHeight / itemHeight),

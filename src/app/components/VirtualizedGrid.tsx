@@ -20,7 +20,9 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
     setItemHeight(
       !containerRef.current
         ? 0
-        : containerRef.current.getBoundingClientRect().width / columns
+        : (containerRef.current.getBoundingClientRect().width -
+            (columns - 1) * gap) /
+            columns
     );
   }, [width]);
 
@@ -30,9 +32,10 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
     columns,
     items,
     containerHeight,
+    gap,
   });
 
-  const additionalGap = (startIndex * gap) / columns;
+  const additionalGap = startIndex * gap;
   const rowsCount = items.length / columns;
 
   return (
