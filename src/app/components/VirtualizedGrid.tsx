@@ -9,7 +9,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
   columns,
   containerHeight,
-  gapTwClass,
+  gap = 0,
 }): JSX.Element => {
   const scrollTop = useWindowScroll();
   const [width] = useWindowSize();
@@ -32,15 +32,23 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
     containerHeight,
   });
 
+  const additionalGap = (startIndex * gap) / columns;
+  const rowsCount = items.length / columns;
+
   return (
-    <div style={{ height: `${(items.length * itemHeight) / columns}px` }}>
+    <div
+      style={{
+        height: `${rowsCount * itemHeight + rowsCount * gap - gap}px`,
+      }}
+    >
       <div
-        className={`gap-7 grid relative sm:grid-cols-2
+        className={`grid relative sm:grid-cols-2
         md:grid-cols-3 
         lg:grid-cols-4`}
         ref={containerRef}
         style={{
-          top: `${startIndex * itemHeight}px`,
+          gap,
+          top: `${startIndex * itemHeight + additionalGap}px`,
         }}
       >
         {visibleItems.map((item, index) => (

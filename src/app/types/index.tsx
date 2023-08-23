@@ -28,7 +28,7 @@ export interface VirtualizedGridProps {
   items: ItemProps[];
   columns: number;
   containerHeight: number;
-  gapTwClass?: string;
+  gap?: number;
 }
 
 export interface ScreenToColumns {
