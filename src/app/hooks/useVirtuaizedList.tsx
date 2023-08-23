@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { ItemProps } from "../types";
 
 export default function useVirtualizedList({
@@ -21,9 +22,9 @@ export default function useVirtualizedList({
     items.length / columns
   );
 
-  const visibleItems = items.slice(
-    startIndex * columns,
-    (endIndex + 2) * columns
+  const visibleItems = useMemo(
+    () => items.slice(startIndex * columns, (endIndex + 2) * columns),
+    [startIndex, endIndex, columns]
   );
 
   return {
