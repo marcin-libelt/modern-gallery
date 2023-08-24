@@ -3,7 +3,7 @@ import { memo } from "react";
 import type { ItemProps } from "../types";
 import Link from "next/link";
 
-const RowItem = ({
+const GridImage = ({
   id,
   color,
   urls,
@@ -32,6 +32,6 @@ const RowItem = ({
     </Link>
   );
 };
-RowItem.displayName = "RowItem";
+GridImage.displayName = "GridImage";
 
-export default memo(RowItem);
+export default memo(GridImage);

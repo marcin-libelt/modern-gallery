@@ -1,5 +1,5 @@
 import useWindowSize from "./useWindowSize";
 import useWindowScroll from "./useWindowScroll";
-import useVirtualizedList from "./useVirtuaizedList";
+import useVirtualizedGrid from "./useVirtuaizedGrid";
 
-export { useWindowSize, useWindowScroll, useVirtualizedList };
+export { useWindowSize, useWindowScroll, useVirtualizedGrid };

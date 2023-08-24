@@ -1,21 +1,14 @@
 import { useMemo } from "react";
-import { ItemProps } from "../types";
+import { VirtualizedGridHookProps } from "../types";
 
-export default function useVirtualizedList({
+export default function useVirtualizedGrid({
   scrollTop,
   itemHeight,
   columns,
   items,
   containerHeight,
   gap,
-}: {
-  scrollTop: number;
-  itemHeight: number;
-  columns: number;
-  items: ItemProps[];
-  containerHeight: number;
-  gap: number;
-}) {
+}: VirtualizedGridHookProps) {
   let startIndex = Math.floor(scrollTop / (itemHeight + gap));
 
   const endIndex = Math.min(

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useWindowScroll, useWindowSize, useVirtualizedList } from "../hooks";
-import { RowItem } from "../components";
+import { useWindowScroll, useWindowSize, useVirtualizedGrid } from "../hooks";
+import { GridImage } from "../components";
 import type { VirtualizedGridProps } from "../types";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
@@ -26,7 +26,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
     );
   }, [width]);
 
-  const { startIndex, visibleItems } = useVirtualizedList({
+  const { startIndex, visibleItems } = useVirtualizedGrid({
     scrollTop,
     itemHeight,
     columns,
@@ -35,13 +35,12 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
     gap,
   });
 
-  const additionalGap = startIndex * gap;
   const rowsCount = items.length / columns;
 
   return (
     <div
       style={{
-        height: `${rowsCount * itemHeight + rowsCount * gap - gap}px`,
+        height: `${rowsCount * (itemHeight + gap) - gap}px`,
       }}
     >
       <div
@@ -51,11 +50,11 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
         ref={containerRef}
         style={{
           gap,
-          top: `${startIndex * itemHeight + additionalGap}px`,
+          top: `${startIndex * (itemHeight + gap)}px`,
         }}
       >
         {visibleItems.map((item, index) => (
-          <RowItem key={index + item.id} {...item} />
+          <GridImage key={index + item.id} {...item} />
         ))}
       </div>
     </div>

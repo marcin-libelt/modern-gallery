@@ -4,12 +4,12 @@ import BackButton from "./BackButton";
 import Footer from "./Footer";
 import Gallery from "./Gallery";
 import GalleryImage from "./GalleryImage";
+import GridImage from "./GridImage";
 import Header from "./Header";
 import Heading from "./Heading";
 import LayoutContainer from "./LayoutContainer";
 import Loading from "./Loading";
 import OtherPhotos from "./OtherPhotos";
-import RowItem from "./RowItem";
 import VirtualizedGrid from "./VirtualizedGrid";
 
 export {
@@ -19,11 +19,11 @@ export {
   Footer,
   Gallery,
   GalleryImage,
+  GridImage,
   Header,
   Heading,
   LayoutContainer,
   Loading,
   OtherPhotos,
-  RowItem,
   VirtualizedGrid,
 };

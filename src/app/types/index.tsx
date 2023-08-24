@@ -31,6 +31,15 @@ export interface VirtualizedGridProps {
   gap?: number;
 }
 
+export interface VirtualizedGridHookProps {
+  scrollTop: number;
+  itemHeight: number;
+  columns: number;
+  items: ItemProps[];
+  containerHeight: number;
+  gap: number;
+}
+
 export interface ScreenToColumns {
   screen: number;
   cols: number;
