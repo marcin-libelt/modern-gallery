@@ -27,8 +27,8 @@ const PhotoPage = async ({
 
   const classes = {
     root: `md:flex md:gap-8 items-start`,
-    media: `md:w-7/12 p-2 border border-gray-400`,
-    info: `md:w-5/12`,
+    media: `md:w-8/12 md:p-2 md:border border-gray-400`,
+    info: `md:w-4/12 mt-2 md:mt-0`,
     caption: `text-xs`,
   };
 

@@ -18,12 +18,12 @@ const PhotoSkeleton = () => {
         « back to the gallery
       </button>
       <div className="md:flex md:gap-8 items-start">
-        <div className="md:w-7/12 p-2 border border-gray-400 aspect-square">
+        <div className="md:w-8/12 md:p-2 md:border border-gray-400 aspect-square">
           <div className="w-full h-full bg-gray-800">
             <Loading />
           </div>
         </div>
-        <div className="md:w-5/12 py-2">
+        <div className="md:w-4/12 mt-2 md:mt-0">
           <span className="text-xs text-gray-500">
             <span className="block bg-gray-500 rounded-full w-1/2">&nbsp;</span>
           </span>
