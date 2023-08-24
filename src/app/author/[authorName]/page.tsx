@@ -1,4 +1,5 @@
 import { AuthorInfo, Gallery } from "@/app/components";
+import PageContainer from "@/app/components/PageContainer";
 import { getAuthor, getItems } from "@/app/utils/get-data";
 
 interface Props {
@@ -16,13 +17,13 @@ const AuthorPage = async ({ params }: Props): Promise<JSX.Element> => {
   }
 
   return (
-    <>
+    <PageContainer>
       <AuthorInfo
         author={author}
         className={"mt-8 mb-12 md:w-1/2 md:mx-auto"}
       />
       <Gallery data={photos} />
-    </>
+    </PageContainer>
   );
 };
 

@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ItemProps } from "@/app/types";
 import { getItem, getItems, getOtherPhotos } from "@/app/utils/get-data";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import PageContainer from "@/app/components/PageContainer";
 
 const PhotoPage = async ({
   params,
@@ -28,13 +29,12 @@ const PhotoPage = async ({
   const classes = {
     root: `md:flex md:gap-8 items-start`,
     media: `md:w-8/12 md:p-2 md:border border-gray-400`,
-    info: `md:w-4/12 mt-2 md:mt-0`,
+    info: `md:w-4/12 mt-2 md:mt-0 md:sticky top-[100px]`,
     caption: `text-xs`,
   };
 
   return (
-    <>
-      <BackButton />
+    <PageContainer headerActions={<BackButton />}>
       <div className={classes.root}>
         <div className={classes.media}>
           <GalleryImage photo={photo} />
@@ -72,7 +72,7 @@ const PhotoPage = async ({
           )}
         </div>
       </div>
-    </>
+    </PageContainer>
   );
 };
 

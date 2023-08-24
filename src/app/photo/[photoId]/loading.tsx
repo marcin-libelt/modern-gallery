@@ -1,4 +1,5 @@
 import { Loading } from "@/app/components";
+import PageContainer from "@/app/components/PageContainer";
 import { StylesDictionary } from "@/app/types";
 
 const PhotoSkeleton = () => {
@@ -10,7 +11,7 @@ const PhotoSkeleton = () => {
   };
 
   return (
-    <>
+    <PageContainer>
       <button
         type="button"
         className="text-sm float-right relative -mt-16 z-10"
@@ -46,7 +47,7 @@ const PhotoSkeleton = () => {
           </div>
         </div>
       </div>
-    </>
+    </PageContainer>
   );
 };
 

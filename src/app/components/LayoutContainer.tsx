@@ -10,7 +10,7 @@ const LayoutContainer = ({
 }: PropsWithChildren<ContainerProps>): JSX.Element => {
   const baseCls = `mx-auto px-5 w-full lg:w-9/12 max-w-screen-xl`;
 
-  const clsName = `${baseCls} ${additionalCls ? additionalCls : ""}`;
+  const clsName = `${baseCls} ${additionalCls}`;
   return <div className={clsName}>{children}</div>;
 };
 
