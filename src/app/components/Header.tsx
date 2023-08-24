@@ -1,8 +1,9 @@
 "use client";
 
-import { Heading, LayoutContainer } from "../components";
+import { Heading, LayoutContainer } from "@/app/components";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Logo from "@/app/components/icons/Logo";
 
 const Header = (): JSX.Element => {
   const pathname = usePathname();
@@ -16,6 +17,7 @@ const Header = (): JSX.Element => {
   return (
     <header className="sticky top-0 z-10 mb-1">
       <LayoutContainer className={classes.root}>
+        <Logo width={35} color={"#ff9e42"} />
         {!isHomepage ? (
           <Link href={"/"} className={"text-xl flex no-underline"}>
             <HeadigCopy />
