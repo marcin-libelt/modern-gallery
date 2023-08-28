@@ -1,5 +1,5 @@
-import { Loading } from "@/app/components";
-import PageContainer from "@/app/components/PageContainer";
+import { PageContainer } from "@/app/components";
+import { Loading, ScrollToTop } from "@/app/components/utils";
 import { StylesDictionary } from "@/app/types";
 
 const PhotoSkeleton = () => {
@@ -12,6 +12,7 @@ const PhotoSkeleton = () => {
 
   return (
     <PageContainer>
+      <ScrollToTop />
       <button
         type="button"
         className="text-sm float-right relative -mt-16 z-10"

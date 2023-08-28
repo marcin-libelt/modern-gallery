@@ -14,7 +14,6 @@ const GridImage = ({
   return (
     <Link
       href={`/photo/${id}`}
-      scroll={false}
       className={"aspect-square block hover:opacity-70 transition-opacity"}
       style={{ backgroundColor: color }}
     >

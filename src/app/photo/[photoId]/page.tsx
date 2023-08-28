@@ -4,12 +4,13 @@ import {
   GalleryImage,
   Heading,
   OtherPhotos,
+  PageContainer,
 } from "@/app/components";
+import { ScrollToTop } from "@/app/components/utils";
 import Link from "next/link";
 import { ItemProps } from "@/app/types";
 import { getItem, getItems, getOtherPhotos } from "@/app/utils/get-data";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import PageContainer from "@/app/components/PageContainer";
 
 const PhotoPage = async ({
   params,
@@ -35,6 +36,7 @@ const PhotoPage = async ({
 
   return (
     <PageContainer headerActions={<BackButton />}>
+      <ScrollToTop />
       <div className={classes.root}>
         <div className={classes.media}>
           <GalleryImage photo={photo} />
