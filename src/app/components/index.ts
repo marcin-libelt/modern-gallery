@@ -3,6 +3,7 @@ import Avatar from "./Avatar";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
 import GalleryImage from "./GalleryImage";
+import Grid from "./Grid";
 import GridImage from "./GridImage";
 import Header from "./Header";
 import Heading from "./Heading";
@@ -17,6 +18,7 @@ export {
   BackButton,
   Footer,
   GalleryImage,
+  Grid,
   GridImage,
   Header,
   Heading,
