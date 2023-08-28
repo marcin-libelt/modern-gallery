@@ -8,8 +8,8 @@ import GridImage from "./GridImage";
 import Header from "./Header";
 import Heading from "./Heading";
 import LayoutContainer from "./LayoutContainer";
-import Loading from "./Loading";
 import OtherPhotos from "./OtherPhotos";
+import PageContainer from "./PageContainer";
 import VirtualizedGrid from "./VirtualizedGrid";
 
 export {
@@ -23,7 +23,7 @@ export {
   Header,
   Heading,
   LayoutContainer,
-  Loading,
   OtherPhotos,
+  PageContainer,
   VirtualizedGrid,
 };
