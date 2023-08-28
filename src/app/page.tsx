@@ -1,4 +1,4 @@
-import { Gallery } from "./components";
+import { VirtualizedGrid } from "./components";
 import PageContainer from "./components/PageContainer";
 import { getItems } from "./utils/get-data";
 
@@ -12,7 +12,7 @@ const LandingPage = async (): Promise<JSX.Element> => {
   return (
     <PageContainer>
       <Gradient />
-      <Gallery data={photos} />
+      <VirtualizedGrid items={photos} gap={20} />
     </PageContainer>
   );
 };

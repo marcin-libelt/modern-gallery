@@ -1,14 +1,46 @@
 import { useMemo } from "react";
-import { VirtualizedGridHookProps } from "../types";
+import { ScreenToColumns, VirtualizedGridHookProps } from "../types";
+import useWindowScroll from "./useWindowScroll";
 
 export default function useVirtualizedGrid({
-  scrollTop,
   itemHeight,
-  columns,
   items,
   containerHeight,
+  containerWidth,
   gap,
 }: VirtualizedGridHookProps) {
+  const scrollTop = useWindowScroll();
+
+  /**
+   * Calculate columns count for given screen size
+   * @param {number} screenWidth
+   * @param {array} breakpointCols - array of objects {screen: x, cols: y}
+   * @returns {{screen: number, cols: number}: ScreenToColumns} object with columns number and upper boundry
+   */
+  const getColumnCountByScreenWidth = (
+    screenWidth: number,
+    breakpointCols: ScreenToColumns[]
+  ) => {
+    const keys = breakpointCols
+      .sort((a, b) =>
+        a.screen === b.screen ? 0 : a.screen > b.screen ? -1 : 1
+      )
+      .filter((breakpoint) => screenWidth < breakpoint.screen);
+    return keys[keys.length - 1];
+  };
+
+  const columnsCountMap = [
+    { screen: 9999, cols: 4 },
+    { screen: 1024, cols: 3 },
+    { screen: 768, cols: 2 },
+    { screen: 640, cols: 1 },
+  ];
+
+  const { cols: columns } = getColumnCountByScreenWidth(
+    containerWidth,
+    columnsCountMap
+  );
+
   let startIndex = Math.floor(scrollTop / (itemHeight + gap));
 
   const endIndex = Math.min(
@@ -21,7 +53,11 @@ export default function useVirtualizedGrid({
     [startIndex, endIndex, columns]
   );
 
+  const rowsCount = items.length / columns;
+
   return {
+    columns,
+    rowsCount,
     startIndex,
     endIndex,
     visibleItems,

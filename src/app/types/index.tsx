@@ -1,11 +1,5 @@
 import { CSSProperties } from "react";
 
-export interface GalleryProps {
-  data: ItemProps[];
-  className?: string;
-  isAuthorList?: boolean;
-}
-
 export interface HeadingProps {
   level: number;
   title: string | JSX.Element;
@@ -26,17 +20,14 @@ export interface ItemProps {
 
 export interface VirtualizedGridProps {
   items: ItemProps[];
-  columns: number;
-  containerHeight: number;
   gap?: number;
 }
 
 export interface VirtualizedGridHookProps {
-  scrollTop: number;
   itemHeight: number;
-  columns: number;
   items: ItemProps[];
   containerHeight: number;
+  containerWidth: number;
   gap: number;
 }
 

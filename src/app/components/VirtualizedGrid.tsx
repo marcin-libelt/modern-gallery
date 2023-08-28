@@ -1,20 +1,25 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useWindowScroll, useWindowSize, useVirtualizedGrid } from "../hooks";
+import { useWindowSize, useVirtualizedGrid } from "../hooks";
 import { GridImage } from "../components";
-import type { VirtualizedGridProps } from "../types";
+import type { VirtualizedGridProps, ScreenToColumns } from "../types";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
-  columns,
-  containerHeight,
   gap = 0,
 }): JSX.Element => {
-  const scrollTop = useWindowScroll();
-  const [width] = useWindowSize();
+  const [width, height] = useWindowSize();
   const containerRef = useRef<HTMLDivElement>(null);
   const [itemHeight, setItemHeight] = useState(0);
+
+  const { columns, rowsCount, startIndex, visibleItems } = useVirtualizedGrid({
+    itemHeight,
+    containerWidth: width,
+    items,
+    containerHeight: height,
+    gap,
+  });
 
   useEffect(() => {
     setItemHeight(
@@ -25,17 +30,6 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
             columns
     );
   }, [width]);
-
-  const { startIndex, visibleItems } = useVirtualizedGrid({
-    scrollTop,
-    itemHeight,
-    columns,
-    items,
-    containerHeight,
-    gap,
-  });
-
-  const rowsCount = items.length / columns;
 
   return (
     <div

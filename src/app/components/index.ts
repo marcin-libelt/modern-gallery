@@ -2,7 +2,6 @@ import AuthorInfo from "./AuthorInfo";
 import Avatar from "./Avatar";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
-import Gallery from "./Gallery";
 import GalleryImage from "./GalleryImage";
 import GridImage from "./GridImage";
 import Header from "./Header";
@@ -17,7 +16,6 @@ export {
   Avatar,
   BackButton,
   Footer,
-  Gallery,
   GalleryImage,
   GridImage,
   Header,
