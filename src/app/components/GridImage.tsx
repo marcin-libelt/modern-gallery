@@ -3,6 +3,10 @@ import { memo } from "react";
 import type { ItemProps } from "../types";
 import Link from "next/link";
 
+interface GridImageProps extends ItemProps {
+  priority?: boolean;
+}
+
 const GridImage = ({
   id,
   color,
@@ -10,7 +14,8 @@ const GridImage = ({
   alt_description,
   width,
   height,
-}: ItemProps): JSX.Element => {
+  priority,
+}: GridImageProps): JSX.Element => {
   return (
     <Link
       href={`/photo/${id}`}
@@ -23,7 +28,7 @@ const GridImage = ({
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
           width={width}
           height={height}
-          priority
+          priority={priority}
           alt={alt_description ? alt_description : ""}
           className={"h-full object-cover"}
         />

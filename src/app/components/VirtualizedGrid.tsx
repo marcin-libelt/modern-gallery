@@ -48,7 +48,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
         }}
       >
         {visibleItems.map((item, index) => (
-          <GridImage key={index + item.id} {...item} />
+          <GridImage key={index + item.id} {...item} priority />
         ))}
       </div>
     </div>

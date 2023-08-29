@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ItemProps } from "../types";
 
-const GalleryImage = ({ photo }: ItemProps) => {
+const GalleryImage = ({ photo }: { photo: ItemProps }) => {
   return (
     <Image
       src={photo.urls.raw}
