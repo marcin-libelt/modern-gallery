@@ -52,8 +52,6 @@ export default function useVirtualizedGrid({
     [startIndex, endIndex, columns]
   );
 
-  console.log(startIndex, endIndex, scrollTop, containerHeight);
-
   return {
     columns,
     rowsCount,
