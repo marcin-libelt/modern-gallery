@@ -6,8 +6,16 @@ export interface HeadingProps {
   className?: string;
 }
 
+interface ProfileImageProps {
+  medium: string;
+}
+
 export interface AuthorProps {
-  [key: string]: any;
+  profile_image: ProfileImageProps;
+  name: string;
+  username: string;
+  bio: string | null;
+  instagram_username: string;
 }
 
 export interface StylesDictionary {
@@ -19,10 +27,6 @@ interface ItemUrls {
   thumb: string;
 }
 
-interface UserProps {
-  username: string;
-}
-
 export interface ItemProps {
   id: string;
   color: string;
@@ -31,7 +35,7 @@ export interface ItemProps {
   alt_description: string | null;
   width: number;
   height: number;
-  user: UserProps;
+  user: AuthorProps;
   created_at: string;
 }
 

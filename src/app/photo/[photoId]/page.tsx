@@ -24,7 +24,10 @@ const PhotoPage = async ({
     throw new Error("Error: Photo not found");
   }
 
-  const otherPhotos = await getOtherPhotos(photoId, photo.user.username);
+  const otherPhotos = (await getOtherPhotos(
+    photoId,
+    photo.user.username
+  )) as Array<ItemProps>;
   const timePassed = formatDistanceToNow(new Date(photo.created_at));
 
   const classes = {
@@ -81,9 +84,9 @@ const PhotoPage = async ({
 export const dynamicParams = false;
 
 export const generateStaticParams = async () => {
-  const photos = await getItems();
+  const photos = (await getItems()) as Array<ItemProps>;
 
-  return photos.map((photo: ItemProps) => ({
+  return photos.map((photo) => ({
     photoId: photo.id,
   }));
 };

@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { memo } from "react";
 import type { ItemProps } from "../types";
-import Link from "next/link";
 
 interface GridImageProps extends ItemProps {
   priority?: boolean;
@@ -36,6 +36,7 @@ const GridImage = ({
     </Link>
   );
 };
+
 GridImage.displayName = "GridImage";
 
 export default memo(GridImage);
