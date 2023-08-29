@@ -1,17 +1,44 @@
 const { type } = require("os");
 
-const COLOR_PRIMARY = "#fb8500ff";
-const COLOR_PRIMARY_LIGHTER = "#ffb703ff";
-const COLOR_SECONDARY = "#023047ff";
-const COLOR_SECONDARY_LIGHTER = "#219ebcff";
-const COLOR_BACKGROUND = "#010101";
-const COLOR_BLUE = "#2d3390";
-const COLOR_RED = "#d55050";
-const COLOR_ORANGE = "#d65f22";
-const COLOR_GREEN = "#2c8613";
-const COLOR_WHITE = "#fafafa";
-
 module.exports = {
+  colors: {
+    primary: {
+      value: "#FF9E42",
+      type: "color",
+    },
+    secondary: {
+      value: "#7F7F89",
+      type: "color",
+    },
+    background: {
+      value: "#0C0C18",
+      type: "color",
+    },
+    "alert-info": {
+      value: "#2d3390",
+      type: "color",
+    },
+    "alert-danger": {
+      value: "#d55050",
+      type: "color",
+    },
+    "alert-success": {
+      value: "#2c8613",
+      type: "color",
+    },
+    "alert-warning": {
+      value: "#d65f22",
+      type: "color",
+    },
+    white: {
+      value: "#fafafa",
+      type: "color",
+    },
+    black: {
+      value: "#010101",
+      type: "color",
+    },
+  },
   borderRadius: {
     sm: {
       value: "4px",
@@ -24,48 +51,6 @@ module.exports = {
     xl: {
       value: "16px",
       type: "borderRadius",
-    },
-  },
-  colors: {
-    primary: {
-      value: COLOR_PRIMARY,
-      type: "color",
-    },
-    "primary-lighter": {
-      value: COLOR_PRIMARY_LIGHTER,
-      type: "color",
-    },
-    secondary: {
-      value: COLOR_SECONDARY,
-      type: "color",
-    },
-    "secondary-lighter": {
-      value: COLOR_SECONDARY_LIGHTER,
-      type: "color",
-    },
-    background: {
-      value: COLOR_BACKGROUND,
-      type: "color",
-    },
-    "alert-info": {
-      value: COLOR_BLUE,
-      type: "color",
-    },
-    "alert-danger": {
-      value: COLOR_RED,
-      type: "color",
-    },
-    "alert-success": {
-      value: COLOR_GREEN,
-      type: "color",
-    },
-    "alert-warning": {
-      value: COLOR_ORANGE,
-      type: "color",
-    },
-    white: {
-      value: COLOR_WHITE,
-      type: "color",
     },
   },
   opacity: {

@@ -1,9 +1,9 @@
 export default function Logo({
   width,
-  color = "#D2FF73",
+  className,
 }: {
   width: number;
-  color?: string;
+  className?: string;
 }): JSX.Element {
   return (
     <svg
@@ -15,8 +15,7 @@ export default function Logo({
       viewBox={`0 0 280.82 361.84`}
     >
       <path
-        className="st0"
-        style={{ fill: color }}
+        className={`fill-primary ${className}`}
         d="M264.19,156.73v-46.46c0-0.5-0.27-0.97-0.71-1.22l-40.24-23.23c-0.44-0.25-0.98-0.25-1.41,0l-39.77,22.96V62.85
 			c0-0.5-0.27-0.97-0.71-1.22l-40.24-23.23c-0.22-0.13-0.46-0.19-0.71-0.19c-0.12,0-0.24,0.02-0.36,0.05
 			c-0.12,0.03-0.23,0.08-0.34,0.14L99.47,61.62c-0.44,0.25-0.71,0.72-0.71,1.22v45.93L58.99,85.81c-0.44-0.25-0.98-0.25-1.41,0

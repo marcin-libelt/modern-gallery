@@ -20,11 +20,11 @@ const AuthorInfo = ({
   const InstagramLink = ({ name }: { name: string }) => {
     const instagramUrl = `https://instagram.com/${name}`;
     return (
-      <p className={"text-xs text-gray-400 my-5"}>
+      <p className={"text-xs text-secondary my-5"}>
         <a
           href={instagramUrl}
           target="_blank"
-          className={"text-gray-400"}
+          className={"text-secondary"}
           aria-label={"Instagram account link opens in new tab window."}
         >
           @{name}

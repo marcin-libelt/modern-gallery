@@ -10,7 +10,7 @@ const Header = ({ children }: PropsWithChildren): JSX.Element => {
   const pathname = usePathname();
   const isHomepage = pathname === "/";
   const classes = {
-    root: "flex sticky items-center bg-black h-24 justify-between ",
+    root: "flex sticky items-center bg-background h-24 justify-between ",
   };
 
   const HeadigCopy = () => <p className="text-white">ARCHITECTURE</p>;
@@ -19,7 +19,7 @@ const Header = ({ children }: PropsWithChildren): JSX.Element => {
     <header className="sticky top-0 z-10 mb-1">
       <LayoutContainer className={classes.root}>
         <div className="flex items-center gap-3">
-          <Logo width={35} color={"#ff9e42"} />
+          <Logo width={35} className={"fill-primary"} />
           {!isHomepage ? (
             <Link href={"/"} className={"text-xl flex no-underline"}>
               <HeadigCopy />

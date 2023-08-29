@@ -29,7 +29,7 @@ const PhotoPage = async ({
 
   const classes = {
     root: `md:flex md:gap-8 items-start`,
-    media: `md:w-8/12 md:p-2 md:border border-gray-400`,
+    media: `md:w-8/12 md:p-2 md:border border-secondary`,
     info: `md:w-4/12 mt-2 md:mt-0 md:sticky top-[100px]`,
     caption: `text-xs`,
   };
@@ -43,12 +43,12 @@ const PhotoPage = async ({
           <p className={classes.caption}></p>
         </div>
         <div className={classes.info}>
-          <span className="text-xs text-gray-400">
+          <span className="text-xs text-secondary">
             <span className="sr-only">{"Photo added "}</span>
             {timePassed}
             <span className="sr-only">{" ago "}</span>{" "}
           </span>
-          <span className="text-sm italic text-gray-400 whitespace-nowrap">
+          <span className="text-sm italic text-secondary whitespace-nowrap">
             by {photo.user.username}
           </span>
           <Heading
@@ -58,14 +58,14 @@ const PhotoPage = async ({
           />
           <AuthorInfo
             author={photo.user}
-            className="border-0 border-t border-gray-400 pt-8 pb-14"
+            className="border-0 border-t border-secondary pt-8 pb-14"
           ></AuthorInfo>
           {otherPhotos.length > 0 && (
             <>
               <OtherPhotos limit={5} photos={otherPhotos} />
               <Link
                 href={`/author/${photo.user.username}`}
-                className="text-xs text-gray-400"
+                className="text-xs text-secondary"
               >
                 {"See all"}
                 <span className="sr-only">{" from this author"}</span>
