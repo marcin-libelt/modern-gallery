@@ -3,7 +3,9 @@ import PageContainer from "@/app/components/PageContainer";
 const Loading = () => {
   return (
     <PageContainer>
-      <p>Loading user's gallery...</p>
+      <div aria-live="polite" aria-label="Loading">
+        <p>Loading user's gallery...</p>
+      </div>
     </PageContainer>
   );
 };
