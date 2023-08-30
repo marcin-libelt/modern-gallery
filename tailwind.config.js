@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+const defaultTheme = require("tailwindcss/defaultTheme");
 const tokens = require("./src/app/design-tokens/tokens");
 const transpile = require("./src/app/design-tokens/token-to-tailwind");
 
@@ -20,6 +21,10 @@ module.exports = {
     "./public/.svg",
   ],
   theme: {
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
+    },
     extend: {
       ...classes,
       backgroundImage: {
