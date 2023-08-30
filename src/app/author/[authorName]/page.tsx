@@ -1,11 +1,13 @@
 import { AuthorInfo, Grid, PageContainer } from "@/app/components";
 import { getAuthor, getItems } from "@/app/utils/get-data";
 
-interface Props {
+interface AuthorPageProps {
   params: { authorName: string };
 }
 
-const AuthorPage = async ({ params }: Props): Promise<JSX.Element> => {
+const AuthorPage = async ({
+  params,
+}: AuthorPageProps): Promise<JSX.Element> => {
   const [author, photos] = await Promise.all([
     getAuthor(params.authorName),
     getItems(params.authorName),
@@ -17,16 +19,13 @@ const AuthorPage = async ({ params }: Props): Promise<JSX.Element> => {
 
   return (
     <PageContainer>
-      <AuthorInfo
-        author={author}
-        className={"mt-8 mb-12 md:w-1/2 md:mx-auto"}
-      />
+      <AuthorInfo {...author} className={"mt-8 mb-12 md:w-1/2 md:mx-auto"} />
       <Grid items={photos} gap={20} />
     </PageContainer>
   );
 };
 
-export function generateMetadata({ params }: Props) {
+export function generateMetadata({ params }: AuthorPageProps) {
   const title = `Architecture - ${params.authorName}'s atelier.`;
   return {
     title,

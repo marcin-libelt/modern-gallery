@@ -1,13 +1,17 @@
 import { AuthorProps } from "../types";
 import { Avatar, Heading } from "../components";
 
-const AuthorInfo = ({
-  author,
-  className,
-}: {
-  author: AuthorProps;
+interface AuthorInfoProps extends AuthorProps {
   className?: string;
-}) => {
+}
+
+const AuthorInfo = ({
+  profile_image,
+  name,
+  bio,
+  instagram_username,
+  className,
+}: AuthorInfoProps) => {
   const classes = {
     root: `flex flex-col items-center text-center group ${className}`,
     avatar: `mb-4`,
@@ -33,8 +37,6 @@ const AuthorInfo = ({
       </p>
     );
   };
-
-  const { profile_image, name, bio, instagram_username } = author;
 
   return (
     <div className={classes.root}>

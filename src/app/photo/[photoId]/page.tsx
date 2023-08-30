@@ -60,7 +60,7 @@ const PhotoPage = async ({
             className="mt-3 mb-10 md:mb-5"
           />
           <AuthorInfo
-            author={photo.user}
+            {...photo.user}
             className="border-0 border-t border-secondary pt-8 pb-14"
           ></AuthorInfo>
           {otherPhotos.length > 0 && (

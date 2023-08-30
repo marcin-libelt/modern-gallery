@@ -1,16 +1,18 @@
 import Image from "next/image";
 
+interface AvatarProps {
+  image: string;
+  title?: string;
+  size?: number;
+  className?: string;
+}
+
 const Avatar = ({
   image,
   title,
   size = 50,
   className,
-}: {
-  image: string;
-  title?: string;
-  size?: number;
-  className?: string;
-}): JSX.Element => {
+}: AvatarProps): JSX.Element => {
   return (
     <Image
       sizes="10vw"
