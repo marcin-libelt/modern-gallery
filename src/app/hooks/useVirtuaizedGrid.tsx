@@ -41,6 +41,7 @@ export default function useVirtualizedGrid({
 
   const rowsCount = items.length / columns;
   let startIndex = Math.floor(scrollTop / (itemHeight + gap));
+  startIndex && startIndex--;
 
   const endIndex = Math.min(
     startIndex + Math.ceil(containerHeight / itemHeight),
