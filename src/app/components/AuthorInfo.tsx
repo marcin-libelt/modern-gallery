@@ -45,7 +45,7 @@ const AuthorInfo = ({
         title={name}
         className={classes.avatar}
       />
-      <Heading level={2} title={name} className="text-xl mb-2" />
+      <Heading level={2} title={name} className="mb-2" />
       {bio && <Bio copy={bio} />}
       {instagram_username && <InstagramLink name={instagram_username} />}
     </div>

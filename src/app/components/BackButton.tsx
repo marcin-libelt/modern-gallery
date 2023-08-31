@@ -7,7 +7,7 @@ const BackButton = () => {
 
   return (
     <button type="button" onClick={() => router.back()} className="text-sm">
-      &#171; back to the gallery
+      &#171; back <span className="sr-only xs:not-sr-only">to the gallery</span>
     </button>
   );
 };

@@ -37,7 +37,7 @@ const PhotoSkeleton = () => {
               className="rounded-full mb-4 bg-gray-500"
               style={styles.avatar}
             ></div>
-            <h2 className="align-center w-3/4 text-xl mb-2">
+            <h2 className="align-center w-3/4 mb-2">
               <span className="block bg-gray-600 rounded-full w-full">
                 &nbsp;
               </span>

@@ -39,20 +39,6 @@ module.exports = {
       type: "color",
     },
   },
-  borderRadius: {
-    sm: {
-      value: "4px",
-      type: "borderRadius",
-    },
-    lg: {
-      value: "8px",
-      type: "borderRadius",
-    },
-    xl: {
-      value: "16px",
-      type: "borderRadius",
-    },
-  },
   opacity: {
     low: {
       value: "10%",
@@ -101,69 +87,29 @@ module.exports = {
       type: "letterSpacing",
     },
   },
-  paragraphSpacing: {
-    h1: {
-      value: "32",
-      type: "paragraphSpacing",
-    },
-    h2: {
-      value: "26",
-      type: "paragraphSpacing",
-    },
-  },
-  fontWeights: {
-    headingRegular: {
-      value: "Normal",
-      type: "fontWeights",
-    },
-    headingBold: {
-      value: "Bold",
-      type: "fontWeights",
-    },
-    bodyRegular: {
-      value: "Normal",
-      type: "fontWeights",
-    },
-    bodyBold: {
-      value: "Bold",
-      type: "fontWeights",
-    },
-  },
   fontSizes: {
-    h1: {
-      value: "{fontSizes.h2} * 1.25",
-      type: "fontSizes",
-    },
-    h2: {
-      value: "{fontSizes.h3} * 1.25",
-      type: "fontSizes",
-    },
-    h3: {
-      value: "{fontSizes.h4} * 1.25",
-      type: "fontSizes",
-    },
-    h4: {
-      value: "{fontSizes.h5} * 1.25",
-      type: "fontSizes",
-    },
-    h5: {
-      value: "{fontSizes.h6} * 1.25",
-      type: "fontSizes",
-    },
-    h6: {
-      value: "{fontSizes.body} * 1",
-      type: "fontSizes",
-    },
     body: {
-      value: "16",
-      type: "fontSizes",
-    },
-    sm: {
-      value: "{fontSizes.body} * 0.85",
+      value: "1rem",
       type: "fontSizes",
     },
     xs: {
-      value: "{fontSizes.body} * 0.65",
+      value: "0.75rem",
+      type: "fontSizes",
+    },
+    sm: {
+      value: "0.875rem",
+      type: "fontSizes",
+    },
+    heading1: {
+      value: "1.25rem",
+      type: "fontSizes",
+    },
+    heading2: {
+      value: "1.125rem",
+      type: "fontSizes",
+    },
+    heading3: {
+      value: "1",
       type: "fontSizes",
     },
   },

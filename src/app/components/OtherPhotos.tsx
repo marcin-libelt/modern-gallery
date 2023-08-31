@@ -11,11 +11,7 @@ const OtherPhotos = ({
 }): JSX.Element => {
   return (
     <>
-      <Heading
-        level={2}
-        title={"More from this author"}
-        className="text-white mb-5"
-      />
+      <Heading level={3} title={"More from this author"} className="mb-5" />
       <ul className={"grid grid-cols-5 gap-5 mb-1"} role="list">
         {photos
           .slice(0, limit)

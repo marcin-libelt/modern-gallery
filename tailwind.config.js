@@ -4,14 +4,13 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const tokens = require("./src/app/design-tokens/tokens");
 const transpile = require("./src/app/design-tokens/token-to-tailwind");
 
-const tailwindPropsNameMap = new Map([["fontWeights", "fontWeight"]]);
-
 const classes = {
   colors: transpile(tokens.colors),
   opacity: transpile(tokens.opacity),
-  fontWeight: transpile(tokens.fontWeights),
-  borderRadius: transpile(tokens.borderRadius),
+  fontSize: transpile(tokens.fontSizes),
 };
+
+//console.log(classes);
 
 module.exports = {
   content: [
