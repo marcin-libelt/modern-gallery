@@ -7,7 +7,7 @@ interface ContainerProps {
 const LayoutContainer = ({
   className: additionalCls,
   children,
-}: PropsWithChildren<ContainerProps>): JSX.Element => {
+}: PropsWithChildren<ContainerProps>) => {
   const baseCls = `mx-auto px-5 w-full lg:w-9/12 max-w-screen-xl`;
 
   const clsName = `${baseCls} ${additionalCls}`;

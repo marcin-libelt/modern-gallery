@@ -7,7 +7,7 @@ interface AuthorPageProps {
 
 const AuthorPage = async ({
   params,
-}: AuthorPageProps): Promise<JSX.Element> => {
+}: AuthorPageProps): Promise<React.JSX.Element> => {
   const [author, photos] = await Promise.all([
     getAuthor(params.authorName),
     getItems(params.authorName),

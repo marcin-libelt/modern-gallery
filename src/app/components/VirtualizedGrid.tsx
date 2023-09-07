@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useWindowSize, useVirtualizedGrid } from "../hooks";
 import { GridImage } from "../components";
-import type { VirtualizedGridProps, ScreenToColumns } from "../types";
+import type { VirtualizedGridProps } from "../types";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
   gap = 0,
-}): JSX.Element => {
+}) => {
   const [width, height] = useWindowSize();
   const containerRef = useRef<HTMLDivElement>(null);
   const [itemHeight, setItemHeight] = useState(0);
@@ -22,14 +22,14 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   });
 
   useEffect(() => {
-    setItemHeight(
-      !containerRef.current
-        ? 0
-        : (containerRef.current.getBoundingClientRect().width -
-            (columns - 1) * gap) /
-            columns
-    );
-  }, [width]);
+    if (width && containerRef.current) {
+      setItemHeight(
+        (containerRef.current.getBoundingClientRect().width -
+          (columns - 1) * gap) /
+          columns
+      );
+    }
+  }, [width, columns, gap]);
 
   return (
     <div

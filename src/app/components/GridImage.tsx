@@ -15,7 +15,7 @@ const GridImage = ({
   width,
   height,
   priority,
-}: GridImageProps): JSX.Element => {
+}: GridImageProps) => {
   return (
     <Link
       href={`/photo/${id}`}

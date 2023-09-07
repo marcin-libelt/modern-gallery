@@ -7,12 +7,7 @@ interface AvatarProps {
   className?: string;
 }
 
-const Avatar = ({
-  image,
-  title,
-  size = 50,
-  className,
-}: AvatarProps): JSX.Element => {
+const Avatar = ({ image, title, size = 50, className }: AvatarProps) => {
   return (
     <Image
       sizes="10vw"

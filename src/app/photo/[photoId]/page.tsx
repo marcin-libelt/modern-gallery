@@ -16,7 +16,7 @@ const PhotoPage = async ({
   params,
 }: {
   params: { photoId: string };
-}): Promise<JSX.Element> => {
+}): Promise<React.JSX.Element> => {
   const { photoId } = params;
   const photo = await getItem(photoId);
 

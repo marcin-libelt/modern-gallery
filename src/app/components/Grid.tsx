@@ -1,10 +1,7 @@
 import { GridImage } from ".";
 import type { VirtualizedGridProps } from "../types";
 
-const Grid: React.FC<VirtualizedGridProps> = ({
-  items,
-  gap = 0,
-}): JSX.Element => {
+const Grid: React.FC<VirtualizedGridProps> = ({ items, gap = 0 }) => {
   return (
     <div
       className={`grid relative sm:grid-cols-2

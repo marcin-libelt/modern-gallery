@@ -1,5 +1,3 @@
-const { type } = require("os");
-
 module.exports = {
   colors: {
     primary: {

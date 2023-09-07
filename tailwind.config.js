@@ -10,8 +10,6 @@ const classes = {
   fontSize: transpile(tokens.fontSizes),
 };
 
-//console.log(classes);
-
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",

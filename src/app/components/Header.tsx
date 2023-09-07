@@ -6,7 +6,7 @@ import Link from "next/link";
 import Logo from "@/app/components/icons/Logo";
 import { PropsWithChildren } from "react";
 
-const Header = ({ children }: PropsWithChildren): JSX.Element => {
+const Header = ({ children }: PropsWithChildren) => {
   const pathname = usePathname();
   const isHomepage = pathname === "/";
   const classes = {

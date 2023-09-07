@@ -3,13 +3,13 @@ import Header from "./Header";
 import LayoutContainer from "./LayoutContainer";
 
 interface ContainerProps {
-  headerActions?: JSX.Element | ReactNode;
+  headerActions?: React.JSX.Element | ReactNode;
 }
 
 const PageContainer = ({
   headerActions,
   children,
-}: PropsWithChildren<ContainerProps>): JSX.Element => {
+}: PropsWithChildren<ContainerProps>) => {
   return (
     <>
       <Header>{headerActions}</Header>

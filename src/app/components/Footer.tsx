@@ -1,6 +1,6 @@
 import { LayoutContainer } from "../components";
 
-const Footer = (): JSX.Element => {
+const Footer = () => {
   const classes = {
     root: "mx-auto w-full flex justify-between text-xs pt-5 my-5",
   };

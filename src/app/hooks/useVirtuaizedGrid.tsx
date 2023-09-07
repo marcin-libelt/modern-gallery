@@ -50,7 +50,7 @@ export default function useVirtualizedGrid({
 
   const visibleItems = useMemo(
     () => items.slice(startIndex * columns, (endIndex + 2) * columns),
-    [startIndex, endIndex, columns]
+    [startIndex, endIndex, columns, items]
   );
 
   return {

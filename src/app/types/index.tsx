@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 
 export interface HeadingProps {
   level: number;
-  title: string | JSX.Element | null;
+  title: string | React.JSX.Element | null;
   className?: string;
 }
 

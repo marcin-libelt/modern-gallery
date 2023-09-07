@@ -1,0 +1,8 @@
+{
+  "plugins": ["react"],
+  "extends": ["eslint:recommended", "next"],
+  "globals": {
+    "React": true,
+    "JSX": true
+  }
+}

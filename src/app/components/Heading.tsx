@@ -5,8 +5,8 @@ const Heading = ({
   level,
   title,
   className,
-}: PropsWithChildren<HeadingProps>): JSX.Element => {
-  const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
+}: PropsWithChildren<HeadingProps>) => {
+  const HeadingTag = `h${level}` as keyof React.JSX.IntrinsicElements;
 
   return (
     <HeadingTag className={`flex ${className ? className : ""}`}>

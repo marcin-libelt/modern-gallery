@@ -1,6 +1,6 @@
 import { StylesDictionary } from "@/app/types";
 
-const Loading = (): JSX.Element => {
+const Loading = () => {
   const styles: StylesDictionary = {
     root: {
       background: `linear-gradient(

@@ -27,6 +27,8 @@
     "unsplash-js": "^7.0.18"
   },
   "devDependencies": {
+    "eslint": "^8.48.0",
+    "eslint-config-next": "13.4.19",
     "postcss-import": "^15.1.0"
   }
 }

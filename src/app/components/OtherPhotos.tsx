@@ -8,7 +8,7 @@ const OtherPhotos = ({
 }: {
   limit: number;
   photos: ItemProps[];
-}): JSX.Element => {
+}): React.JSX.Element => {
   return (
     <>
       <Heading level={3} title={"More from this author"} className="mb-5" />

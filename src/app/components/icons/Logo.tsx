@@ -4,7 +4,7 @@ export default function Logo({
 }: {
   width: number;
   className?: string;
-}): JSX.Element {
+}) {
   return (
     <svg
       version="1.1"
