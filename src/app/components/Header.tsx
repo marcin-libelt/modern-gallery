@@ -11,23 +11,26 @@ const Header = ({ children }: PropsWithChildren) => {
   const isHomepage = pathname === "/";
   const classes = {
     root: "flex sticky items-center bg-background h-24 justify-between ",
+    headerLink: "flex items-center gap-3 text-xl no-underline",
   };
 
   const HeadigCopy = () => <p className="text-white">ARCHITECTURE</p>;
+  const logoTitle = "Architecture gallery logo";
 
   return (
     <header className="sticky top-0 z-10 mb-1">
       <LayoutContainer className={classes.root}>
-        <div className="flex items-center gap-3">
-          <Logo width={35} className={"fill-primary"} />
-          {!isHomepage ? (
-            <Link href={"/"} className={"text-xl flex no-underline"}>
-              <HeadigCopy />
-            </Link>
-          ) : (
+        {!isHomepage ? (
+          <Link href={"/"} className={classes.headerLink}>
+            <Logo width={35} title={logoTitle} />
+            <HeadigCopy />
+          </Link>
+        ) : (
+          <a href={window.location.origin} className={classes.headerLink}>
+            <Logo width={35} title={logoTitle} />
             <Heading level={1} title={<HeadigCopy />} />
-          )}
-        </div>
+          </a>
+        )}
         <div className="flex justify-between">{children}</div>
       </LayoutContainer>
     </header>
