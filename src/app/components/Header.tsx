@@ -16,6 +16,7 @@ const Header = ({ children }: PropsWithChildren) => {
 
   const HeadigCopy = () => <p className="text-white">ARCHITECTURE</p>;
   const logoTitle = "Architecture gallery logo";
+  const origin = typeof window === "undefined" ? "/" : window.location.origin;
 
   return (
     <header className="sticky top-0 z-10 mb-1">
@@ -26,7 +27,7 @@ const Header = ({ children }: PropsWithChildren) => {
             <HeadigCopy />
           </Link>
         ) : (
-          <a href={window.location.origin} className={classes.headerLink}>
+          <a href={origin} className={classes.headerLink}>
             <Logo width={35} title={logoTitle} />
             <Heading level={1} title={<HeadigCopy />} />
           </a>
