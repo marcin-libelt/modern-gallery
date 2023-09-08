@@ -27,7 +27,7 @@ const Header = ({ children }: PropsWithChildren) => {
             <HeadigCopy />
           </Link>
         ) : (
-          <a href={origin} className={classes.headerLink}>
+          <a href={origin} className={classes.headerLink} rel="nofollow">
             <Logo width={35} title={logoTitle} />
             <Heading level={1} title={<HeadigCopy />} />
           </a>

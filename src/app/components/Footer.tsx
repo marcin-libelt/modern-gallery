@@ -10,7 +10,12 @@ const Footer = () => {
       <LayoutContainer>
         <p>
           GitHub:{" "}
-          <a href="https://github.com/marcin-libelt" className="text-white">
+          <a
+            href="https://github.com/marcin-libelt"
+            className="text-white"
+            rel="nofollow"
+            aria-label="Click to visit Marcin's Libelt GitHub profile"
+          >
             https://github.com/marcin-libelt
           </a>
         </p>
