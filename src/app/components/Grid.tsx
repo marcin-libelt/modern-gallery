@@ -1,12 +1,10 @@
 import { GridImage } from ".";
+import { StyledGrid } from "../styles/sharedstyles";
 import type { VirtualizedGridProps } from "../types";
 
 const Grid: React.FC<VirtualizedGridProps> = ({ items, gap = 0 }) => {
   return (
-    <div
-      className={`grid relative sm:grid-cols-2
-        md:grid-cols-3 
-        lg:grid-cols-4`}
+    <StyledGrid
       style={{
         gap,
       }}
@@ -14,7 +12,7 @@ const Grid: React.FC<VirtualizedGridProps> = ({ items, gap = 0 }) => {
       {items.map((item, index) => (
         <GridImage key={index + item.id} {...item} />
       ))}
-    </div>
+    </StyledGrid>
   );
 };
 

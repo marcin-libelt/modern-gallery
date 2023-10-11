@@ -1,12 +1,8 @@
-import { LayoutContainer } from "../components";
+import { LayoutContainer, StyledFooter } from "@/app/styles/sharedstyles";
 
 const Footer = () => {
-  const classes = {
-    root: "mx-auto w-full flex justify-between text-xs pt-5 my-5",
-  };
-
   return (
-    <footer className={classes.root}>
+    <StyledFooter>
       <LayoutContainer>
         <p>
           GitHub:{" "}
@@ -21,7 +17,7 @@ const Footer = () => {
         </p>
         <p>&copy; {new Date().getFullYear()} by Marcin Libelt </p>
       </LayoutContainer>
-    </footer>
+    </StyledFooter>
   );
 };
 

@@ -7,7 +7,6 @@ import Grid from "./Grid";
 import GridImage from "./GridImage";
 import Header from "./Header";
 import Heading from "./Heading";
-import LayoutContainer from "./LayoutContainer";
 import OtherPhotos from "./OtherPhotos";
 import PageContainer from "./PageContainer";
 import VirtualizedGrid from "./VirtualizedGrid";
@@ -22,7 +21,6 @@ export {
   GridImage,
   Header,
   Heading,
-  LayoutContainer,
   OtherPhotos,
   PageContainer,
   VirtualizedGrid,

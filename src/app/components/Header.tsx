@@ -1,40 +1,84 @@
 "use client";
 
-import { Heading, LayoutContainer } from "@/app/components";
+import { Heading } from "@/app/components";
+import { LayoutContainer } from "@/app/styles/sharedstyles";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Logo from "@/app/components/icons/Logo";
 import { PropsWithChildren } from "react";
+import styled, { css } from "styled-components";
 
-const Header = ({ children }: PropsWithChildren) => {
+const LinkCss = css`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-decoration-line: none;
+
+  color: ${({ theme }) => theme.font};
+`;
+
+const StyledLink = styled(Link)`
+  ${LinkCss}
+`;
+
+const StyledA = styled.a`
+  ${LinkCss}
+`;
+
+const HeaderActionBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const StyledHeader = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 0.25rem;
+  background-color: ${({ theme }: { theme: any }) => theme.body};
+
+  .logo path {
+    fill: ${({ theme }: { theme: any }) => theme.font};
+  }
+`;
+
+const HeaderStyledContainer = styled(LayoutContainer)`
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+`;
+
+const Header = ({
+  className,
+  children,
+}: PropsWithChildren & { className?: string }) => {
   const pathname = usePathname();
   const isHomepage = pathname === "/";
-  const classes = {
-    root: "flex sticky items-center bg-background h-24 justify-between ",
-    headerLink: "flex items-center gap-3 text-xl no-underline",
-  };
 
-  const HeadigCopy = () => <p className="text-white">ARCHITECTURE</p>;
+  const HeadigCopy = () => <p>ARCHITECTURE</p>;
   const logoTitle = "Architecture gallery logo";
   const origin = typeof window === "undefined" ? "/" : window.location.origin;
 
   return (
-    <header className="sticky top-0 z-10 mb-1">
-      <LayoutContainer className={classes.root}>
+    <StyledHeader className={className}>
+      <HeaderStyledContainer>
         {!isHomepage ? (
-          <Link href={"/"} className={classes.headerLink}>
+          <StyledLink href={"/"}>
             <Logo width={35} title={logoTitle} />
             <HeadigCopy />
-          </Link>
+          </StyledLink>
         ) : (
-          <a href={origin} className={classes.headerLink} rel="nofollow">
+          <StyledA href={origin} rel="nofollow">
             <Logo width={35} title={logoTitle} />
             <Heading level={1} title={<HeadigCopy />} />
-          </a>
+          </StyledA>
         )}
-        <div className="flex justify-between">{children}</div>
-      </LayoutContainer>
-    </header>
+        <HeaderActionBox>{children}</HeaderActionBox>
+      </HeaderStyledContainer>
+    </StyledHeader>
   );
 };
 
