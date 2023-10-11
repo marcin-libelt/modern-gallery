@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useWindowSize, useVirtualizedGrid } from "../hooks";
-import { GridImage } from "../components";
+import { GridImage } from "@/app/components";
 import type { VirtualizedGridProps } from "../types";
+import { StyledGrid } from "@/app/styles/sharedstyles";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
@@ -37,10 +38,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
         height: `${rowsCount * (itemHeight + gap) - gap}px`,
       }}
     >
-      <div
-        className={`grid relative sm:grid-cols-2
-        md:grid-cols-3 
-        lg:grid-cols-4`}
+      <StyledGrid
         ref={containerRef}
         style={{
           gap,
@@ -50,7 +48,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
         {visibleItems.map((item, index) => (
           <GridImage key={index + item.id} {...item} priority />
         ))}
-      </div>
+      </StyledGrid>
     </div>
   );
 };

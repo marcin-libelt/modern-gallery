@@ -19,7 +19,7 @@ const AuthorPage = async ({
 
   return (
     <PageContainer>
-      <AuthorInfo {...author} className={"mt-8 mb-12 md:w-1/2 md:mx-auto"} />
+      <AuthorInfo {...author} />
       <Grid items={photos} gap={20} />
     </PageContainer>
   );

@@ -1,5 +1,8 @@
+"use client";
+
 import { PropsWithChildren } from "react";
 import { HeadingProps } from "../types";
+import styled from "styled-components";
 
 const Heading = ({
   level,
@@ -8,10 +11,14 @@ const Heading = ({
 }: PropsWithChildren<HeadingProps>) => {
   const HeadingTag = `h${level}` as keyof React.JSX.IntrinsicElements;
 
+  const StyledHeading = styled(HeadingTag)`
+    display: flex;
+  `;
+
   return (
-    <HeadingTag className={`flex ${className ? className : ""}`}>
+    <StyledHeading className={`${className && className}`}>
       {title}
-    </HeadingTag>
+    </StyledHeading>
   );
 };
 

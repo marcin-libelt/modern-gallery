@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactNode } from "react";
-import Header from "./Header";
-import LayoutContainer from "./LayoutContainer";
+import { Header } from "@/app/components/";
+import { LayoutContainer } from "@/app/styles/sharedstyles";
 
 interface ContainerProps {
   headerActions?: React.JSX.Element | ReactNode;
