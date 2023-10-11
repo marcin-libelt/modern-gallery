@@ -29,6 +29,7 @@
   "devDependencies": {
     "eslint": "^8.48.0",
     "eslint-config-next": "13.4.19",
+    "normalize.css": "^8.0.1",
     "postcss-import": "^15.1.0"
   }
 }
