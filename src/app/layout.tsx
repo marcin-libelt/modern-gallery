@@ -2,6 +2,9 @@
 import { Inter } from "next/font/google";
 import { Footer } from "./components";
 import StyledApp from "./components/StyledApp";
+import { GlobalStyles } from "./styles/globalstyles";
+import "normalize.css/normalize.css";
+import StyledComponentsRegistry from "./lib/registry";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +16,15 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <StyledApp>
-      <html lang="en">
-        <body className={inter.className}>
-          {children}
-          <Footer />
-        </body>
-      </html>
+      <StyledComponentsRegistry>
+        <html lang="en">
+          <GlobalStyles />
+          <body className={inter.className}>
+            {children}
+            <Footer />
+          </body>
+        </html>
+      </StyledComponentsRegistry>
     </StyledApp>
   );
 };
