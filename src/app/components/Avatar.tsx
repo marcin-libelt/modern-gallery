@@ -1,4 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import styled from "styled-components";
+
+const StyledAvatar = styled(Image)`
+  border-radius: 9999px;
+`;
 
 interface AvatarProps {
   image: string;
@@ -9,13 +16,13 @@ interface AvatarProps {
 
 const Avatar = ({ image, title, size = 50, className }: AvatarProps) => {
   return (
-    <Image
+    <StyledAvatar
       sizes="10vw"
       src={image}
       width={size}
       height={size}
       alt={`Profile image of ${title}`}
-      className={`rounded-full ${className}`}
+      className={`${className}`}
     />
   );
 };

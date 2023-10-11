@@ -1,18 +1,40 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { ItemProps } from "@/app/types";
-import { Heading } from "../components";
+import { Heading } from "@/app/components";
+import styled from "styled-components";
+
+const StyledUl = styled.ul`
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-bottom: 0.25rem;
+`;
+
+const StyledH = styled(Heading)`
+  margin-bottom: 1.25rem;
+`;
+
+const StyledLink = styled(Link)`
+  font-size: ${({ theme }) => theme.fontSize.tiny};
+  color: ${({ theme }) => theme.colors.secondary};
+`;
 
 const OtherPhotos = ({
   limit = 9,
+  username,
   photos,
 }: {
   limit: number;
+  username: string;
   photos: ItemProps[];
 }): React.JSX.Element => {
   return (
     <>
-      <Heading level={3} title={"More from this author"} className="mb-5" />
-      <ul className={"grid grid-cols-5 gap-5 mb-1"} role="list">
+      <StyledH level={3} title={"More from this author"} />
+      <StyledUl role="list">
         {photos
           .slice(0, limit)
           .map(({ id, urls, alt_description }: ItemProps) => (
@@ -25,7 +47,11 @@ const OtherPhotos = ({
               ></Image>
             </li>
           ))}
-      </ul>
+      </StyledUl>
+      <StyledLink href={`/author/${username}`}>
+        {"See all"}
+        <span className="sr-only">{" from this author"}</span>
+      </StyledLink>
     </>
   );
 };

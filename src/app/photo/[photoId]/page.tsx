@@ -6,11 +6,13 @@ import {
   OtherPhotos,
   PageContainer,
 } from "@/app/components";
+import { Info, Media, PhotoPageWrapper } from "./page.styled";
 import { ScrollToTop } from "@/app/components/utils";
-import Link from "next/link";
 import { ItemProps } from "@/app/types";
 import { getItem, getItems, getOtherPhotos } from "@/app/utils/get-data";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+// import { device } from "@/app/styles/breakpoints";
+// import styled from "styled-components";
 
 const PhotoPage = async ({
   params,
@@ -30,53 +32,45 @@ const PhotoPage = async ({
   )) as Array<ItemProps>;
   const timePassed = formatDistanceToNow(new Date(photo.created_at));
 
-  const classes = {
-    root: `md:flex md:gap-8 items-start`,
-    media: `md:w-8/12 md:p-2 md:border border-secondary`,
-    info: `md:w-4/12 mt-2 md:mt-0 md:sticky top-[100px]`,
-    caption: `text-xs`,
-  };
+  // const StyledLink = styled(Link)``;
+  // const StyledH = styled(Heading)`
+  //   margin-top: 0.75rem;
+  //   margin-bottom: 2.5rem;
+
+  //   @media (${device.md}) {
+  //     margin-bottom: 1.25rem;
+  //   }
+  // `;
 
   return (
     <PageContainer headerActions={<BackButton />}>
       <ScrollToTop />
-      <div className={classes.root}>
-        <div className={classes.media}>
+      <PhotoPageWrapper>
+        <Media>
           <GalleryImage photo={photo} />
-          <p className={classes.caption}></p>
-        </div>
-        <div className={classes.info}>
-          <span className="text-xs text-secondary">
+        </Media>
+        <Info>
+          <span className="meta">
             <span className="sr-only">{"Photo added "}</span>
             {timePassed}
             <span className="sr-only">{" ago "}</span>{" "}
           </span>
-          <span className="text-sm italic text-secondary whitespace-nowrap">
-            by {photo.user.username}
-          </span>
+          <span className="meta name">by {photo.user.username}</span>
           <Heading
             level={1}
             title={photo.description || photo.alt_description}
-            className="mt-3 mb-10 md:mb-5"
+            className="heading"
           />
-          <AuthorInfo
-            {...photo.user}
-            className="border-0 border-t border-secondary pt-8 pb-14"
-          ></AuthorInfo>
+          <AuthorInfo {...photo.user}></AuthorInfo>
           {otherPhotos.length > 0 && (
-            <>
-              <OtherPhotos limit={5} photos={otherPhotos} />
-              <Link
-                href={`/author/${photo.user.username}`}
-                className="text-xs text-secondary"
-              >
-                {"See all"}
-                <span className="sr-only">{" from this author"}</span>
-              </Link>
-            </>
+            <OtherPhotos
+              limit={5}
+              photos={otherPhotos}
+              username={photo.user.username}
+            />
           )}
-        </div>
-      </div>
+        </Info>
+      </PhotoPageWrapper>
     </PageContainer>
   );
 };
