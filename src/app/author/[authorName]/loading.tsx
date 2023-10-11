@@ -1,4 +1,4 @@
-import PageContainer from "@/app/components/PageContainer";
+import { PageContainer } from "@/app/components/";
 
 const Loading = () => {
   return (
