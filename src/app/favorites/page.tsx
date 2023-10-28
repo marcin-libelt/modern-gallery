@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { PageContainer } from "../components";
+import { PageContainer } from "@/components";
 
 // TODO: get userId from Authentication service
 const USER_ID = "2312312321";

@@ -5,11 +5,11 @@ import {
   Heading,
   OtherPhotos,
   PageContainer,
-} from "@/app/components";
-import { ScrollToTop } from "@/app/components/utils";
+} from "@/components";
+import { ScrollToTop } from "@/components/utils";
 import Link from "next/link";
-import { ItemProps } from "@/app/types";
-import { getItem, getItems, getOtherPhotos } from "@/app/utils/get-data";
+import { ItemProps } from "@/types";
+import { getItem, getItems, getOtherPhotos } from "@/utils/get-data";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const PhotoPage = async ({

@@ -1,6 +1,6 @@
-import { PageContainer } from "@/app/components";
-import { Loading, ScrollToTop } from "@/app/components/utils";
-import { StylesDictionary } from "@/app/types";
+import { PageContainer } from "@/components";
+import { Loading, ScrollToTop } from "@/components/utils";
+import { StylesDictionary } from "@/types";
 
 const PhotoSkeleton = () => {
   const styles: StylesDictionary = {

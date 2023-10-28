@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { ItemProps } from "@/app/types";
-import { Heading } from "../components";
+import { ItemProps } from "@/types";
+import { Heading } from ".";
 
 const OtherPhotos = ({
   limit = 9,

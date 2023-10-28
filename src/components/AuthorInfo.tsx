@@ -1,4 +1,4 @@
-import { AuthorProps } from "../types";
+import type { AuthorProps } from "../types";
 import { Avatar, Heading } from "../components";
 
 interface AuthorInfoProps extends AuthorProps {

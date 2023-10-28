@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { HeadingProps } from "../types";
+import { HeadingProps } from "@/types";
 
 const Heading = ({
   level,

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useWindowSize, useVirtualizedGrid } from "../hooks";
-import { GridImage } from "../components";
-import type { VirtualizedGridProps } from "../types";
+import { useWindowSize, useVirtualizedGrid } from "@/hooks";
+import { GridImage } from ".";
+import type { VirtualizedGridProps, ItemProps } from "@/types";
 
 const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
   items,
@@ -47,7 +47,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({
           top: `${startIndex * (itemHeight + gap)}px`,
         }}
       >
-        {visibleItems.map((item, index) => (
+        {visibleItems.map((item: ItemProps, index: number) => (
           <GridImage key={index + item.id} {...item} priority />
         ))}
       </div>

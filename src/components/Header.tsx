@@ -1,9 +1,9 @@
 "use client";
 
-import { Heading, LayoutContainer } from "@/app/components";
+import { Heading, LayoutContainer } from "@/components";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Logo from "@/app/components/icons/Logo";
+import Logo from "@/components/icons/Logo";
 import { PropsWithChildren } from "react";
 
 const Header = ({ children }: PropsWithChildren) => {

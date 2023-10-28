@@ -1,6 +1,6 @@
 import { cache } from "react";
-import { unsplash_photos } from "../data";
-import { ItemProps, AuthorProps } from "../types";
+import { unsplash_photos } from "@/data";
+import { ItemProps, AuthorProps } from "@/types";
 
 export const revalidate = 3600;
 

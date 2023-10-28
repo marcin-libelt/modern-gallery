@@ -1,4 +1,4 @@
-import { LayoutContainer } from "../components";
+import { LayoutContainer } from ".";
 
 const Footer = () => {
   const classes = {

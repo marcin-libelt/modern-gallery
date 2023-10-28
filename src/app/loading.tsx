@@ -1,5 +1,5 @@
-import { Loading as LoadingIndicaor } from "@/app/components/utils";
-import { PageContainer } from "./components";
+import { Loading as LoadingIndicaor } from "@/components/utils";
+import { PageContainer } from "@/components";
 
 const LandingLoading = () => {
   const fakeData = [...Array(20)];

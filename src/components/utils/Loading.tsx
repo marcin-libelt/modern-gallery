@@ -1,4 +1,4 @@
-import { StylesDictionary } from "@/app/types";
+import { StylesDictionary } from "@/types";
 
 const Loading = () => {
   const styles: StylesDictionary = {

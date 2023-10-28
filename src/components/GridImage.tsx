@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
-import type { ItemProps } from "../types";
+import type { ItemProps } from "@/types";
 
 interface GridImageProps extends ItemProps {
   priority?: boolean;

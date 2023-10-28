@@ -1,6 +1,6 @@
-import { VirtualizedGrid } from "./components";
-import PageContainer from "./components/PageContainer";
-import { getItems } from "./utils/get-data";
+import { VirtualizedGrid } from "@/components";
+import PageContainer from "@/components/PageContainer";
+import { getItems } from "@/utils/get-data";
 
 const LandingPage = async (): Promise<React.JSX.Element> => {
   const photos = await getItems();

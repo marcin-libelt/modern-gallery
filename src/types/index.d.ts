@@ -11,6 +11,7 @@ interface ProfileImageProps {
 }
 
 export interface AuthorProps {
+  id: string;
   profile_image: ProfileImageProps;
   name: string;
   username: string;

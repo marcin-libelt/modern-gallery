@@ -1,5 +1,5 @@
-import { AuthorInfo, Grid, PageContainer } from "@/app/components";
-import { getAuthor, getItems } from "@/app/utils/get-data";
+import { AuthorInfo, Grid, PageContainer } from "@/components";
+import { getAuthor, getItems } from "@/utils/get-data";
 
 interface AuthorPageProps {
   params: { authorName: string };

@@ -16,7 +16,7 @@ const nextConfig = {
       },
     ],
     loader: "custom",
-    loaderFile: "./src/app/utils/unsplashLoader.ts",
+    loaderFile: "./src/utils/unsplashLoader.ts",
   },
   experimental: {
     serverActions: true,

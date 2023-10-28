@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require("tailwindcss/defaultTheme");
-const tokens = require("./src/app/design-tokens/tokens");
-const transpile = require("./src/app/design-tokens/token-to-tailwind");
+const tokens = require("./src/design-tokens/tokens");
+const transpile = require("./src/design-tokens/token-to-tailwind");
 
 const classes = {
   colors: transpile(tokens.colors),
@@ -12,7 +12,6 @@ const classes = {
 
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/.svg",

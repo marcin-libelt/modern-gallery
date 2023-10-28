@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { ScreenToColumns, VirtualizedGridHookProps } from "../types";
+import { ScreenToColumns, VirtualizedGridHookProps } from "@/types";
 import useWindowScroll from "./useWindowScroll";
 
 const columnsCountMap = [
